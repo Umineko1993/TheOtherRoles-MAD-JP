@@ -174,7 +174,7 @@ namespace TheOtherRoles.Patches {
                 int localRemaining = PlayerControl.LocalPlayer.RemainingEmergencies;
                 int teamRemaining = Mathf.Max(0, maxNumberOfMeetings - meetingsCount);
                 int remaining = Mathf.Min(localRemaining, (Mayor.mayor != null && Mayor.mayor == PlayerControl.LocalPlayer) ? 1 : teamRemaining);
-                __instance.NumberText.text = $"自身の緊急招集数{localRemaining.ToString()} と他の乗組員の緊急招集数 {teamRemaining.ToString()}";
+                __instance.NumberText.text = $"自身の緊急招集残数{localRemaining.ToString()} と他の乗組員の緊急招集残数 {teamRemaining.ToString()}";
                 __instance.ButtonActive = remaining > 0;
                 __instance.ClosedLid.gameObject.SetActive(!__instance.ButtonActive);
                 __instance.OpenLid.gameObject.SetActive(__instance.ButtonActive);

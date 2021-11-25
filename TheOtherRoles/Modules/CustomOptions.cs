@@ -120,7 +120,7 @@ namespace TheOtherRoles {
     class GameOptionsMenuStartPatch {
         public static void Postfix(GameOptionsMenu __instance) {
             if (GameObject.Find("TORSettings") != null) { // Settings setup has already been performed, fixing the title of the tab and returning
-                GameObject.Find("TORSettings").transform.FindChild("GameGroup").FindChild("Text").GetComponent<TMPro.TextMeshPro>().SetText("The Other Roles Settings");
+                GameObject.Find("TORSettings").transform.FindChild("GameGroup").FindChild("Text").GetComponent<TMPro.TextMeshPro>().SetText("The Other RolesÇÃê›íË");
                 return;
             }
 

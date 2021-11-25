@@ -123,7 +123,7 @@ namespace TheOtherRoles.Patches {
 
                 if (infos.Any(info => info.roleId == RoleId.Lover)) {
                     PlayerControl otherLover = PlayerControl.LocalPlayer == Lovers.lover1 ? Lovers.lover2 : Lovers.lover1;
-                    __instance.RoleBlurbText.text += Helpers.cs(Lovers.color, $"\n♥ あなたは {otherLover?.Data?.PlayerName ?? ""} に恋をしています ♥");
+                    __instance.RoleBlurbText.text += Helpers.cs(Lovers.color, $"\n♥ あなたは {otherLover?.Data?.PlayerName ?? ""} と恋人になりました ♥");
                 } 
             }
         }

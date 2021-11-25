@@ -201,7 +201,7 @@ namespace TheOtherRoles.Modules {
                     }
                 } catch (System.Exception e) {
                     if (!LOADED)
-                        System.Console.WriteLine("自作衣装を追加出来ませんでした\n" + e);
+                        System.Console.WriteLine("自作の帽子を追加出来ませんでした\n" + e);
                 }
                 LOADED = true;
             }
@@ -250,7 +250,7 @@ namespace TheOtherRoles.Modules {
                             __instance.SetHat(color);
                         }
                     } catch (System.Exception e) {
-                        System.Console.WriteLine("自作衣装を作成出来ません\n" + e);
+                        System.Console.WriteLine("自作の帽子を作成出来ません\n" + e);
                     }
                 }
             }     
@@ -258,7 +258,7 @@ namespace TheOtherRoles.Modules {
 
         [HarmonyPatch(typeof(HatsTab), nameof(HatsTab.OnEnable))]
         public class HatsTabOnEnablePatch {
-            public static string innerslothPackageName = "Innersloth Hats";
+            public static string innerslothPackageName = "Innersloth公式作";
             private static TMPro.TMP_Text textTemplate;
 
             public static float createHatPackage(List<System.Tuple<HatBehaviour, HatExtension>> hats, string packageName, float YStart, HatsTab __instance) {
@@ -347,6 +347,7 @@ namespace TheOtherRoles.Modules {
 
                 var orderedKeys = packages.Keys.OrderBy((string x) => {
                     if (x == innerslothPackageName) return 1000;
+                    //if (x == "TOR開発チーム作") return 0;
                     if (x == "Developer Hats") return 0;
                     return 500;
                 });
@@ -378,9 +379,9 @@ namespace TheOtherRoles.Modules {
             try {
                 HttpStatusCode status = await FetchHats();
                 if (status != HttpStatusCode.OK)
-                    System.Console.WriteLine("自作衣装を読み込めませんでした\n");
+                    System.Console.WriteLine("自作の帽子を読み込めませんでした\n");
             } catch (System.Exception e) {
-                System.Console.WriteLine("衣装を取得出来ません\n" + e.Message);
+                System.Console.WriteLine("帽子を取得出来ません\n" + e.Message);
             }
             running = false;
         }
