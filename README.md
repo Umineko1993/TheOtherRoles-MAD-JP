@@ -1,4 +1,4 @@
-# TheOtherRoles_MAD-JP
+# TheOtherRoles-MAD-JP
 </br>
 このMODはThe Other Roles狂人入り( https://github.com/tomarai/TheOtherRoles )を日本語化した物になります。</br>
 このThe Other Roles 日本語化したMODはAmong Us(v2021.11.9.5s)にて動作確認済みです。</br>
