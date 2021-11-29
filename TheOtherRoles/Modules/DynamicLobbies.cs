@@ -27,7 +27,7 @@ namespace TheOtherRoles.Modules {
                                         PlayerControl.LocalPlayer.RpcSyncSettings(PlayerControl.GameOptions);
                                         __instance.AddChat(PlayerControl.LocalPlayer, $"プレイ人数が{LobbyLimit}人に変更されました");
                                     } else {
-                                        __instance.AddChat(PlayerControl.LocalPlayer, $"Lobby Size is already {LobbyLimit}");
+                                        __instance.AddChat(PlayerControl.LocalPlayer, $"プレイ人数{LobbyLimit}の準備が整いました");
                                     }
                                 }
                             }
@@ -68,17 +68,17 @@ namespace TheOtherRoles.Modules {
             }
 
             private static void DisconnectPlayer(InnerNetClient _this, int clientId) {
-			if (!_this.AmHost) {
-				return;
-			}
-			MessageWriter messageWriter = MessageWriter.Get(SendOption.Reliable);
-			messageWriter.StartMessage(4);
-			messageWriter.Write(_this.GameId);
-			messageWriter.WritePacked(clientId);
-			messageWriter.Write((byte)DisconnectReasons.GameFull);
-			messageWriter.EndMessage();
-			_this.SendOrDisconnect(messageWriter);
-			messageWriter.Recycle();
+            if (!_this.AmHost) {
+                return;
+            }
+            MessageWriter messageWriter = MessageWriter.Get(SendOption.Reliable);
+            messageWriter.StartMessage(4);
+            messageWriter.Write(_this.GameId);
+            messageWriter.WritePacked(clientId);
+            messageWriter.Write((byte)DisconnectReasons.GameFull);
+            messageWriter.EndMessage();
+            _this.SendOrDisconnect(messageWriter);
+            messageWriter.Recycle();
             }
         }
     }

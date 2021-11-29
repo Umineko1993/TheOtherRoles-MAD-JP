@@ -164,6 +164,9 @@ namespace TheOtherRoles
                 canKillNeutrals = CustomOptionHolder.sheriffCanKillNeutrals.getBool();
                 spyCanDieToSheriff = CustomOptionHolder.spyCanDieToSheriff.getBool();
                 madmateCanDieToSheriff = CustomOptionHolder.madmateCanDieToSheriff.getBool();
+                if (CustomOptionHolder.evilHackerSpawnRate.getSelection() > 0 &&
+                    CustomOptionHolder.evilHackerCanCreateMadmate.getBool())
+                    madmateCanDieToSheriff = CustomOptionHolder.createdMadmateCanDieToSheriff.getBool();
             }
         }
 
@@ -483,15 +486,28 @@ namespace TheOtherRoles
         public static PlayerControl evilHacker;
         public static Color color = Palette.ImpostorRed;
 
+        public static bool canCreateMadmate = false;
+        public static PlayerControl currentTarget;
+
         private static Sprite buttonSprite;
+        private static Sprite madmateButtonSprite;
+
         public static Sprite getButtonSprite() {
             if (buttonSprite) return buttonSprite;
             buttonSprite = DestroyableSingleton<TranslationController>.Instance.GetImage(ImageNames.AirshipAdminButton);
             return buttonSprite;
         }
 
+        public static Sprite getMadmateButtonSprite() {
+            if (madmateButtonSprite) return madmateButtonSprite;
+            madmateButtonSprite = Helpers.loadSpriteFromResources("TheOtherRoles.Resources.SidekickButton.png", 115f);
+            return madmateButtonSprite;
+        }
+
         public static void clearAndReload() {
             evilHacker = null;
+            currentTarget = null;
+            canCreateMadmate = CustomOptionHolder.evilHackerCanCreateMadmate.getBool();
         }
     }
 
@@ -1155,11 +1171,24 @@ namespace TheOtherRoles
 
         public static bool canEnterVents = false;
         public static bool hasImpostorVision = false;
+        public static bool noticeImpostors = false;
 
         public static void clearAndReload() {
             madmate = null;
-            canEnterVents = CustomOptionHolder.madmateCanEnterVents.getBool();
-            hasImpostorVision = CustomOptionHolder.madmateHasImpostorVision.getBool();
+            CustomOption opCanEnterVents = CustomOptionHolder.madmateCanEnterVents;
+            CustomOption opHasImpostorVision = CustomOptionHolder.madmateHasImpostorVision;
+            CustomOption opNoticeImpostors = CustomOptionHolder.madmateNoticeImpostors;
+
+            if (CustomOptionHolder.evilHackerSpawnRate.getSelection() > 0 &&
+                CustomOptionHolder.evilHackerCanCreateMadmate.getBool()) {
+                // Madmate should be configurable from EvilHacker options if EvilHacker can make a madmate
+                opCanEnterVents = CustomOptionHolder.createdMadmateCanEnterVents;
+                opHasImpostorVision = CustomOptionHolder.createdMadmateHasImpostorVision;
+                opNoticeImpostors = CustomOptionHolder.createdMadmateNoticeImpostors;
+            }
+            canEnterVents = opCanEnterVents.getBool();
+            hasImpostorVision = opHasImpostorVision.getBool();
+            noticeImpostors = opNoticeImpostors.getBool();
         }
     }
 }

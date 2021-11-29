@@ -10,16 +10,18 @@ namespace TheOtherRoles.Patches {
     [HarmonyPatch]
     public static class CredentialsPatch {
         public static string fullCredentials = 
-$@"<size=130%><color=#ff351f>TheOtherRoles_MAD_JP</color></size> v{TheOtherRolesPlugin.Version.ToString()}
+$@"<size=130%><color=#ff351f>TheOtherRoles MAD JP</color></size> v{TheOtherRolesPlugin.Version.ToString()}
 <size=60%>Modded by <color=#FCCE03FF>Eisbison</color>, <color=#FCCE03FF>EndOfFile</color>
 <color=#FCCE03FF>Thunderstorm584</color> & <color=#FCCE03FF>Mallöris</color>
 Button design by <color=#FCCE03FF>Bavari</color>
 MAD版製作者 <color=#FCCE03FF>tomarai</color>
+この狂人MODについて: https://git.io/AUMod</size>
 日本語翻訳者 <color=#FCCE03FF>哘雅楽乃</color></size>";
 
     public static string mainMenuCredentials = 
 $@"Modded by <color=#FCCE03FF>Eisbison</color>, <color=#FCCE03FF>Thunderstorm584</color>, <color=#FCCE03FF>EndOfFile</color> & <color=#FCCE03FF>Mallöris</color>
-Design by <color=#FCCE03FF>Bavari</color>, MAD版製作者 <color=#FCCE03FF>tomarai</color>, 日本語翻訳者 <color=#FCCE03FF>哘雅楽乃</color>";
+Design by <color=#FCCE03FF>Bavari</color>, MAD版製作者 <color=#FCCE03FF>tomarai</color>, 日本語翻訳者 <color=#FCCE03FF>哘雅楽乃</color>
+このMODについて: https://git.io/AUMod";
 
         public static string contributorsCredentials = "<size=80%>GitHub Contributors: Alex2911, gendelo3</size>";
 
@@ -60,7 +62,7 @@ Design by <color=#FCCE03FF>Bavari</color>, MAD版製作者 <color=#FCCE03FF>toma
             static void Postfix(PingTracker __instance){
                 __instance.text.alignment = TMPro.TextAlignmentOptions.TopRight;
                 if (AmongUsClient.Instance.GameState == InnerNet.InnerNetClient.GameStates.Started) {
-                    __instance.text.text = $"<size=130%><color=#ff351f>TheOtherRoles_MAD_JP</color></size> v{TheOtherRolesPlugin.Version.ToString()}\n" + __instance.text.text;
+                    __instance.text.text = $"<size=130%><color=#ff351f>TheOtherRoles MAD JP</color></size> v{TheOtherRolesPlugin.Version.ToString()}\n" + __instance.text.text;
                     if (PlayerControl.LocalPlayer.Data.IsDead) {
                         __instance.transform.localPosition = new Vector3(3.45f, __instance.transform.localPosition.y, __instance.transform.localPosition.z);
                     } else {

@@ -34,7 +34,7 @@ namespace TheOtherRoles
         public static RoleInfo janitor = new RoleInfo("ジェニター", Janitor.color, "死体を隠すことで<color=#FF1919FF>マフィア</color>と協力する", "死体を隠せ", RoleId.Janitor);
         public static RoleInfo morphling = new RoleInfo("モーフィング", Morphling.color, "見つからないように姿を変えましょう", "見た目を変えて惑わせ", RoleId.Morphling);
         public static RoleInfo camouflager = new RoleInfo("カモフラジャー", Camouflager.color, "乗組員をカモフラージュして殺せ", "他を隠せ", RoleId.Camouflager);
-        public static RoleInfo evilHacker = new RoleInfo("イビルハッカー", EvilHacker.color, "システムをハックして乗組員を殺せ", "システムをハックして乗組員を殺せ", RoleId.EvilHacker);
+        public static RoleInfo evilHacker = new RoleInfo("イビルハッカー", EvilHacker.color, "システムをハックして乗組員を殺せ", "狂人を作成して乗組員を惑わせろ", RoleId.EvilHacker);
         public static RoleInfo vampire = new RoleInfo("吸血鬼", Vampire.color, "かみ傷で乗組員を殺せ", "乗組員を噛め", RoleId.Vampire);
         public static RoleInfo eraser = new RoleInfo("イレーサー", Eraser.color, "乗組員を殺し、彼らの役割を消せ", "乗組員の役割を消せ", RoleId.Eraser);
         public static RoleInfo trickster = new RoleInfo("トリックスター", Trickster.color, "びっくり箱を使って他の人を驚かせろ", "敵を驚かせろ", RoleId.Trickster);

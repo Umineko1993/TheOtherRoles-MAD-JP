@@ -23,7 +23,7 @@ namespace TheOtherRoles.Patches {
             if (Madmate.madmate != PlayerControl.LocalPlayer)
                 return false;
 
-            if (!CustomOptionHolder.madmateNoticeImpostors.getBool())
+            if (!Madmate.noticeImpostors)
                 return false;
 
             var (playerCompleted, playerTotal) = TasksHandler.taskInfo(Madmate.madmate.Data, true);
@@ -160,19 +160,19 @@ namespace TheOtherRoles.Patches {
             if (PlayerControl.LocalPlayer != null && PlayerControl.LocalPlayer.Data.Role.IsImpostor) {
                 foreach (PlayerControl player in PlayerControl.AllPlayerControls)
                     if (Godfather.godfather != null && Godfather.godfather == player)
-                            player.nameText.text = player.Data.PlayerName + " (G)";
+                            player.nameText.text = player.Data.PlayerName + " (組長)";
                     else if (Mafioso.mafioso != null && Mafioso.mafioso == player)
-                            player.nameText.text = player.Data.PlayerName + " (M)";
+                            player.nameText.text = player.Data.PlayerName + " (組員)";
                     else if (Janitor.janitor != null && Janitor.janitor == player)
-                            player.nameText.text = player.Data.PlayerName + " (J)";
+                            player.nameText.text = player.Data.PlayerName + " (ジェニター)";
                 if (MeetingHud.Instance != null)
                     foreach (PlayerVoteArea player in MeetingHud.Instance.playerStates)
                         if (Godfather.godfather != null && Godfather.godfather.PlayerId == player.TargetPlayerId)
-                            player.NameText.text = Godfather.godfather.Data.PlayerName + " (G)";
+                            player.NameText.text = Godfather.godfather.Data.PlayerName + " (組長)";
                         else if (Mafioso.mafioso != null && Mafioso.mafioso.PlayerId == player.TargetPlayerId)
-                            player.NameText.text = Mafioso.mafioso.Data.PlayerName + " (M)";
+                            player.NameText.text = Mafioso.mafioso.Data.PlayerName + " (組員)";
                         else if (Janitor.janitor != null && Janitor.janitor.PlayerId == player.TargetPlayerId)
-                            player.NameText.text = Janitor.janitor.Data.PlayerName + " (J)";
+                            player.NameText.text = Janitor.janitor.Data.PlayerName + " (ジェニター)";
             }
 
             // Lovers
@@ -192,7 +192,7 @@ namespace TheOtherRoles.Patches {
                 if (MeetingHud.Instance != null) {
                     foreach (PlayerVoteArea player in MeetingHud.Instance.playerStates) {
                         var target = Helpers.playerById(player.TargetPlayerId);
-                        if (target != null)  player.NameText.text += $" ({(Helpers.isLighterColor(target.Data.DefaultOutfit.ColorId) ? "L" : "D")})";
+                        if (target != null)  player.NameText.text += $" ({(Helpers.isLighterColor(target.Data.DefaultOutfit.ColorId) ? "淡色" : "濃色")})";
                     }
                 }
             }

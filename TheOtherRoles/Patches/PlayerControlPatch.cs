@@ -22,7 +22,7 @@ namespace TheOtherRoles.Patches {
             if (!ShipStatus.Instance) return result;
             if (targetingPlayer == null) targetingPlayer = PlayerControl.LocalPlayer;
             if (targetingPlayer.Data.IsDead) return result;
-		
+        
             Vector2 truePosition = targetingPlayer.GetTruePosition();
             Il2CppSystem.Collections.Generic.List<GameData.PlayerInfo> allPlayers = GameData.Instance.AllPlayers;
             for (int i = 0; i < allPlayers.Count; i++)
@@ -143,6 +143,12 @@ namespace TheOtherRoles.Patches {
             setPlayerOutline(Sheriff.currentTarget, Sheriff.color);
         }
 
+        static void evilHackerSetTarget() {
+            if (EvilHacker.evilHacker == null || EvilHacker.evilHacker != PlayerControl.LocalPlayer) return;
+            EvilHacker.currentTarget = setTarget(true);
+            setPlayerOutline(EvilHacker.currentTarget, EvilHacker.color);
+        }
+
         static void trackerSetTarget() {
             if (Tracker.tracker == null || Tracker.tracker != PlayerControl.LocalPlayer) return;
             Tracker.currentTarget = setTarget();
@@ -166,7 +172,7 @@ namespace TheOtherRoles.Patches {
         static void vampireSetTarget() {
             if (Vampire.vampire == null || Vampire.vampire != PlayerControl.LocalPlayer) return;
 
-		    PlayerControl target = null;
+            PlayerControl target = null;
             if (Spy.spy != null) {
                 if (Spy.impostorsCanKillAnyone) {
                     target = setTarget(false, true);
@@ -690,6 +696,8 @@ namespace TheOtherRoles.Patches {
                 engineerUpdate();
                 // Tracker
                 trackerUpdate();
+                // EvilHacker
+                evilHackerSetTarget();
                 // Jackal
                 jackalSetTarget();
                 // Sidekick
@@ -756,15 +764,15 @@ namespace TheOtherRoles.Patches {
                     string msg = "";
 
                     if (isMedicReport) {
-                        msg = $"Ž€‘Ì•ñ:‰½{Math.Round(timeSinceDeath / 1000)}•b‘O‚ÉŽE‚³‚ê‚Ü‚µ‚½";
+                        msg = $"Ž€‘Ì•ñ: ‰½{Math.Round(timeSinceDeath / 1000)}•b‘O‚ÉŽE‚³‚ê‚Ü‚µ‚½";
                     } else if (isDetectiveReport) {
                         if (timeSinceDeath < Detective.reportNameDuration * 1000) {
-                            msg =  $"Ž€‘Ì•ñ:ŽEŠQŽÒ‚Í{deadPlayer.killerIfExisting.name}‚Å‚·";
+                            msg =  $"Ž€‘Ì•ñ: ŽEŠQŽÒ‚Í{deadPlayer.killerIfExisting.name}‚Å‚·";
                         } else if (timeSinceDeath < Detective.reportColorDuration * 1000) {
-                            var typeOfColor = Helpers.isLighterColor(deadPlayer.killerIfExisting.Data.DefaultOutfit.ColorId) ? "–¾‚é‚¢F" : "ˆÃ‚¢F";
-                            msg =  $"Ž€‘Ì•ñ:ŽEŠQŽÒ‚Í{typeOfColor}F‚Å‚·";
+                            var typeOfColor = Helpers.isLighterColor(deadPlayer.killerIfExisting.Data.DefaultOutfit.ColorId) ? "’WF" : "”ZF";
+                            msg =  $"Ž€‘Ì•ñ: ŽEŠQŽÒ‚Í{typeOfColor}F‚Å‚·";
                         } else {
-                            msg = $"Ž€‘Ì•ñ:Ž€‘Ì‚ÍŒÃ‚·‚¬‚Äî•ñ‚ð“¾‚éŽ–‚ªo—ˆ‚Ü‚¹‚ñ";
+                            msg = $"Ž€‘Ì•ñ: Ž€‘Ì‚ÍŒÃ‚·‚¬‚Äî•ñ‚ð“¾‚éŽ–‚ªo—ˆ‚Ü‚¹‚ñ";
                         }
                     }
 

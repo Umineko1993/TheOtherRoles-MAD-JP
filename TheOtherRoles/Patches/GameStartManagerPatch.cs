@@ -68,7 +68,7 @@ namespace TheOtherRoles.Patches {
                             continue;
                         else if (!playerVersions.ContainsKey(client.Id))  {
                             blockStart = true;
-                            message += $"<color=#FF0000FF>{client.Character.Data.PlayerName} はバージョンが異なるか、The Other Rolesが導入されてません\n</color>";
+                            message += $"<color=#FF0000FF>{client.Character.Data.PlayerName} はバージョンが異なるか、The Other Roles MAD JPが導入されてません\n</color>";
                         } else {
                             PlayerVersion PV = playerVersions[client.Id];
                             int diff = TheOtherRolesPlugin.Version.CompareTo(PV.version);
@@ -100,11 +100,11 @@ namespace TheOtherRoles.Patches {
                         kickingTimer += Time.deltaTime;
                         if (kickingTimer > 10) {
                             kickingTimer = 0;
-			                AmongUsClient.Instance.ExitGame(DisconnectReasons.ExitGame);
+                            AmongUsClient.Instance.ExitGame(DisconnectReasons.ExitGame);
                             SceneChanger.ChangeScene("MainMenu");
                         }
 
-                        __instance.GameStartText.text = $"<color=#FF0000FF>ホストとThe Other Rolesのバージョンが違います\nあなたは{Math.Round(10 - kickingTimer)}秒後にゲーム部屋から追い出されます</color>";
+                        __instance.GameStartText.text = $"<color=#FF0000FF>部屋主とThe Other Roles MAD JPのバージョンが違います\nあなたは{Math.Round(10 - kickingTimer)}秒後にゲームから追い出されます</color>";
                         __instance.GameStartText.transform.localPosition = __instance.StartButton.transform.localPosition + Vector3.up * 2;
                     } else {
                         __instance.GameStartText.transform.localPosition = __instance.StartButton.transform.localPosition;

@@ -44,7 +44,7 @@ namespace TheOtherRoles.Modules {
             
             var text = button.transform.GetChild(0).GetComponent<TMPro.TMP_Text>();
             __instance.StartCoroutine(Effects.Lerp(0.1f, new System.Action<float>((p) => {
-                text.SetText("The Other Rolesを\n更新する");
+                text.SetText("The Other Roles MAD JPを\n更新する");
             })));
 
             TwitchManager man = DestroyableSingleton<TwitchManager>.Instance;
@@ -74,7 +74,7 @@ namespace TheOtherRoles.Modules {
         }
 
         public static void ExecuteUpdate() {
-            string info = "The Other Rolesを更新中\nしばらくお待ち下さい";
+            string info = "The Other Roles MAD JPを更新中\nしばらくお待ち下さい";
             ModUpdater.InfoPopup.Show(info); // Show originally
             if (updateTask == null) {
                 if (updateURI != null) {
@@ -103,7 +103,8 @@ namespace TheOtherRoles.Modules {
             try {
                 HttpClient http = new HttpClient();
                 http.DefaultRequestHeaders.Add("User-Agent", "TheOtherRoles Updater");
-                var response = await http.GetAsync(new System.Uri("https://api.github.com/repos/Eisbison/TheOtherRoles/releases/latest"), HttpCompletionOption.ResponseContentRead);
+                var response = await http.GetAsync(new System.Uri("https://api.github.com/repos/Umineko1993/TheOtherRoles-MAD-JP/releases/latest"), HttpCompletionOption.ResponseContentRead);
+                // var response = await http.GetAsync(new System.Uri("https://api.github.com/repos/Eisbison/TheOtherRoles/releases/latest"), HttpCompletionOption.ResponseContentRead);
                 // var response = await http.GetAsync(new System.Uri("https://api.github.com/repos/EoF-1141/TheOtherRoles/releases/latest"), HttpCompletionOption.ResponseContentRead);
                 if (response.StatusCode != HttpStatusCode.OK || response.Content == null) {
                     System.Console.WriteLine("サーバーはデータを返しませんでした: " + response.StatusCode.ToString());
@@ -165,7 +166,7 @@ namespace TheOtherRoles.Modules {
                         responseStream.CopyTo(fileStream); 
                     }
                 }
-                showPopup("The Other Rolesの更新が完了しました\nゲームを再起動して下さい");
+                showPopup("The Other Roles MAD JPの更新が完了しました\nゲームを再起動して下さい");
                 return true;
             } catch (System.Exception ex) {
                 TheOtherRolesPlugin.Instance.Log.LogError(ex.ToString());

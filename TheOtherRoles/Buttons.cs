@@ -19,6 +19,7 @@ namespace TheOtherRoles
         private static CustomButton morphlingButton;
         private static CustomButton camouflagerButton;
         private static CustomButton evilHackerButton;
+        private static CustomButton evilHackerCreatesMadmateButton;
         private static CustomButton hackerButton;
         private static CustomButton trackerTrackPlayerButton;
         private static CustomButton trackerTrackCorpsesButton;
@@ -359,6 +360,31 @@ namespace TheOtherRoles
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
                 KeyCode.F
+            );
+
+            // EvilHacker creates madmate button
+            evilHackerCreatesMadmateButton = new CustomButton(
+                () => {
+                    /*
+                     * creates madmate
+                     */
+                    MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.EvilHackerCreatesMadmate, Hazel.SendOption.Reliable, -1);
+                    writer.Write(EvilHacker.currentTarget.PlayerId);
+                    AmongUsClient.Instance.FinishRpcImmediately(writer);
+                    RPCProcedure.evilHackerCreatesMadmate(EvilHacker.currentTarget.PlayerId);
+                },
+                () => {
+                    return EvilHacker.evilHacker != null &&
+                      EvilHacker.evilHacker == PlayerControl.LocalPlayer &&
+                      EvilHacker.canCreateMadmate &&
+                      !PlayerControl.LocalPlayer.Data.IsDead;
+                },
+                () => { return EvilHacker.currentTarget && PlayerControl.LocalPlayer.CanMove; },
+                () => {},
+                EvilHacker.getMadmateButtonSprite(),
+                new Vector3(-2.7f, -0.06f, 0),
+                __instance,
+                null
             );
 
             // Hacker button
@@ -903,13 +929,13 @@ namespace TheOtherRoles
                     string msg = "";
 
                     int randomNumber = Medium.target.killerIfExisting?.PlayerId == Mini.mini?.PlayerId ? TheOtherRoles.rnd.Next(3) : TheOtherRoles.rnd.Next(4);
-                    string typeOfColor = Helpers.isLighterColor(Medium.target.killerIfExisting.Data.DefaultOutfit.ColorId) ? "–¾‚é‚¢F" : "ˆÃ‚¢F";
+                    string typeOfColor = Helpers.isLighterColor(Medium.target.killerIfExisting.Data.DefaultOutfit.ColorId) ? "’WF" : "”ZF";
                     float timeSinceDeath = ((float)(Medium.meetingStartTime - Medium.target.timeOfDeath).TotalMilliseconds);
                     string name = " (" + Medium.target.player.Data.PlayerName + ")";
 
 
-                    if (randomNumber == 0) msg = "‚ ‚È‚½‚Ì–ğE‚Í‰½‚Å‚·‚©? „‚Ì–ğE‚Í " + RoleInfo.GetRole(Medium.target.player) + "‚Å‚·" + name;
-                    else if (randomNumber == 1) msg = "‚ ‚È‚½‚ğEŠQ‚µ‚½”Æl‚ÌF‚Í‰½‚Å‚·‚© ? „‚ğEŠQ‚µ‚½”Æl‚ÌF‚Í " + typeOfColor + "‚Å‚·" + name;
+                    if (randomNumber == 0) msg = "‚ ‚È‚½‚Ì–ğE‚Í‰½‚Å‚·‚©? „‚Ì–ğE‚Í " + RoleInfo.GetRole(Medium.target.player) + "‚Å‚·"  + name;
+                    else if (randomNumber == 1) msg = "‚ ‚È‚½‚ğEŠQ‚µ‚½”Æl‚ÌF‚Í‰½‚Å‚·‚© ? „‚ğEŠQ‚µ‚½”Æl‚ÌF‚Í " + typeOfColor + " ‚Å‚·" + name;
                     else if (randomNumber == 2) msg = "‚ ‚È‚½‚Í‚¢‚Â€–S‚µ‚Ü‚µ‚½‚©? „‚Í " + Math.Round(timeSinceDeath / 1000) + "‰ñ–Ú‚Ì‰ï‹cŠJn‘O‚É€–S‚µ‚Ü‚µ‚½" + name;
                     else msg = "‚ ‚È‚½‚ğEŠQ‚µ‚½”Æl‚Ì–ğE‚Í‰½‚Å‚·‚©? „‚ğEŠQ‚µ‚½”Æl‚Ì–ğE‚Í " + RoleInfo.GetRole(Medium.target.killerIfExisting) + "‚Å‚·" + name; //exlude mini 
 

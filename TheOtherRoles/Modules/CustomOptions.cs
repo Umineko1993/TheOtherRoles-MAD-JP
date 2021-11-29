@@ -55,7 +55,7 @@ namespace TheOtherRoles {
         }
 
         public static CustomOption Create(int id, string name, bool defaultValue, CustomOption parent = null, bool isHeader = false) {
-            return new CustomOption(id, name, new string[]{"オフ", "オン"}, defaultValue ? "オン" : "オフ", parent, isHeader);
+            return new CustomOption(id, name, new string[]{ "オフ", "オン" }, defaultValue ? "オン" : "オフ", parent, isHeader);
         }
 
         // Static behaviour
@@ -407,7 +407,7 @@ namespace TheOtherRoles {
                 hudString = hudString.Substring(end5 + 1);
             }
 
-            hudString += $"\n 詳細を確認するには、タブを押して下さい ({counter+1}/6)";
+            hudString += $"\n 詳細を確認するには、TABキーを押して下さい ({counter+1}/6)";
             __result = hudString;
         }
     }
