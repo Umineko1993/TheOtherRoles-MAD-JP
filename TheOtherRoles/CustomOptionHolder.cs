@@ -321,7 +321,7 @@ namespace TheOtherRoles {
             sidekickPromotesToJackal = CustomOption.Create(225, "ジャッカル死亡後サイドキックが昇格するか", false, jackalSpawnRate);
             sidekickCanKill = CustomOption.Create(226, "サイドキックが殺害出来るか", false, jackalSpawnRate);
             sidekickCanUseVents = CustomOption.Create(227, "サイドキックが通気口を使用出来るか", true, jackalSpawnRate);
-            jackalPromotedFromSidekickCanCreateSidekick = CustomOption.Create(228, "サイドキックから昇格したジャッカルが新たにサイドキックを指名出来るか", true, jackalSpawnRate);
+            jackalPromotedFromSidekickCanCreateSidekick = CustomOption.Create(228, "昇格したジャッカルが新たにサイドキックを指名出来るか", true, jackalSpawnRate);
             jackalCanCreateSidekickFromImpostor = CustomOption.Create(229, "インポスターをサイドキックに出来るか", true, jackalSpawnRate);
             jackalAndSidekickHaveImpostorVision = CustomOption.Create(430, "インポスターと同じ視界にするか", false, jackalSpawnRate);
             //jackalCanSeeEngineerVent = CustomOption.Create(431, "ジャッカルはエンジニアが通気口にいるかを判別出来るか", false, jackalSpawnRate);
