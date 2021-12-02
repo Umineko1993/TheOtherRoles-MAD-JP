@@ -24,48 +24,51 @@ namespace TheOtherRoles
             this.isNeutral = isNeutral;
         }
 
-        public static RoleInfo jester = new RoleInfo("‚Д‚й‚Д‚й", Jester.color, "“Љ•[‚Е’З•ъ‚і‚к‚л", "“Љ•[‚Е’З•ъ‚і‚к‚л", RoleId.Jester);
-        public static RoleInfo mayor = new RoleInfo("Ћs’·", Mayor.color, "‚ ‚И‚Ѕ‚М“Љ•[‚Н2•[‚Й‚И‚и‚Ь‚·", "‚ ‚И‚Ѕ‚М“Љ•[‚Н2•[‚Й‚И‚и‚Ь‚·", RoleId.Mayor);
-        public static RoleInfo engineer = new RoleInfo("ѓGѓ“ѓWѓjѓA", Engineer.color, "‘D‚МЏd—v‚ИѓVѓXѓeѓЂ‚р€ЫЋќЏo—€‚Ь‚·", "‘D‚рЏC—ќЏo—€‚Ь‚·", RoleId.Engineer);
-        public static RoleInfo sheriff = new RoleInfo("ѓVѓFѓЉѓt", Sheriff.color, "<color=#FF1919FF>ѓCѓ“ѓ|ѓXѓ^Ѓ[</color>‚рЋEЉQЏo—€‚Ь‚·", "ђlЉO‚рЋEЉQЏo—€‚Ь‚·", RoleId.Sheriff);
-        public static RoleInfo lighter = new RoleInfo("ѓ‰ѓCѓ^Ѓ[", Lighter.color, "‚ ‚И‚Ѕ‚МЊх‚НЊ€‚µ‚ДЏБ‚¦‚Ь‚№‚с", "‚ ‚И‚Ѕ‚МЊх‚НЊ€‚µ‚ДЏБ‚¦‚Ь‚№‚с", RoleId.Lighter);
-        public static RoleInfo godfather = new RoleInfo("‘g’·", Godfather.color, "Џж‘g€х‚рЋEЉQ‚№‚ж", "Џж‘g€х‚рЋEЉQ‚№‚ж", RoleId.Godfather);
-        public static RoleInfo mafioso = new RoleInfo("‘g€х", Mafioso.color, "<color=#FF1919FF>ѓ}ѓtѓBѓA</color>‚Ж‹¦—Н‚µ‚ДЏж‘g€х‚рЋEЉQ‚№‚ж", "Џж‘g€х‚рЋEЉQ‚№‚ж", RoleId.Mafioso);
-        public static RoleInfo janitor = new RoleInfo("ѓWѓFѓjѓ^Ѓ[", Janitor.color, "ЋЂ‘М‚р‰B‚·‚±‚Ж‚Е<color=#FF1919FF>ѓ}ѓtѓBѓA</color>‚Ж‹¦—Н‚·‚й", "ЋЂ‘М‚р‰B‚№", RoleId.Janitor);
-        public static RoleInfo morphling = new RoleInfo("ѓ‚Ѓ[ѓtѓBѓ“ѓO", Morphling.color, "Њ©‚В‚©‚з‚И‚ў‚ж‚¤‚ЙЋp‚р•П‚¦‚Ь‚µ‚е‚¤", "Њ©‚Ѕ–Ъ‚р•П‚¦‚Дf‚н‚№", RoleId.Morphling);
-        public static RoleInfo camouflager = new RoleInfo("ѓJѓ‚ѓtѓ‰ѓWѓѓЃ[", Camouflager.color, "Џж‘g€х‚рѓJѓ‚ѓtѓ‰Ѓ[ѓWѓ…‚µ‚ДЋE‚№", "‘ј‚р‰B‚№", RoleId.Camouflager);
-        public static RoleInfo evilHacker = new RoleInfo("ѓCѓrѓ‹ѓnѓbѓJЃ[", EvilHacker.color, "ѓVѓXѓeѓЂ‚рѓnѓbѓN‚µ‚ДЏж‘g€х‚рЋE‚№", "‹¶ђl‚рЌмђ¬‚µ‚ДЏж‘g€х‚рf‚н‚№‚л", RoleId.EvilHacker);
-        public static RoleInfo vampire = new RoleInfo("‹zЊЊ‹S", Vampire.color, "‚©‚ЭЏќ‚ЕЏж‘g€х‚рЋE‚№", "Џж‘g€х‚рЉљ‚Я", RoleId.Vampire);
-        public static RoleInfo eraser = new RoleInfo("ѓCѓЊЃ[ѓTЃ[", Eraser.color, "Џж‘g€х‚рЋE‚µЃA”Ю‚з‚М–рЉ„‚рЏБ‚№", "Џж‘g€х‚М–рЉ„‚рЏБ‚№", RoleId.Eraser);
-        public static RoleInfo trickster = new RoleInfo("ѓgѓЉѓbѓNѓXѓ^Ѓ[", Trickster.color, "‚С‚Б‚­‚и” ‚рЋg‚Б‚Д‘ј‚Мђl‚р‹Б‚©‚№‚л", "“G‚р‹Б‚©‚№‚л", RoleId.Trickster);
-        public static RoleInfo cleaner = new RoleInfo("ђґ‘|€х", Cleaner.color, "Џж‘g€х‚рЋE‚µЃAЌ­ђХ‚рЋc‚·‚И", "ЋЂ‘М‚р•Р•t‚Ї‚л", RoleId.Cleaner);
-        public static RoleInfo warlock = new RoleInfo("ѓEѓHЃ[ѓЌѓbѓN", Warlock.color, "Џж‘g€х‚рЋф‚ўЋE‚№", "Џж‘g€х‚рЋф‚ўЋE‚№", RoleId.Warlock);
-        public static RoleInfo bountyHunter = new RoleInfo("ѓoѓEѓ“ѓeѓBЃ[ѓnѓ“ѓ^Ѓ[", BountyHunter.color, "•W“I‚р‘_‚Б‚ДЋЂ‘М‚р‘ќ‚в‚№", "•W“I‚р‘_‚Б‚ДЋЂ‘М‚р‘ќ‚в‚№", RoleId.BountyHunter);
-        public static RoleInfo detective = new RoleInfo("’T’г", Detective.color, "‘«ђХ‚р’І‚Ч‚Д<color=#FF1919FF>ѓCѓ“ѓ|ѓXѓ^Ѓ[</color>‚рЊ©‚В‚Ї‚л", "‘«ђХ‚р’І‚Ч‚л", RoleId.Detective);
-        public static RoleInfo timeMaster = new RoleInfo("ѓ^ѓCѓЂѓ}ѓXѓ^Ѓ[", TimeMaster.color, "ѓ^ѓCѓЂѓVЃ[ѓ‹ѓh‚ЕЏж‘g€х‚рЋз‚к", "ѓ^ѓCѓЂѓVЃ[ѓ‹ѓh‚ЕЏж‘g€х‚рЋз‚к", RoleId.TimeMaster);
-        public static RoleInfo medic = new RoleInfo("ѓЃѓfѓBѓbѓN", Medic.color, "Џ‚‚рЋg—p‚µ‚ДЏж‘g€х‚рЋз‚к", "Џ‚‚рЋg—p‚µ‚ДЏж‘g€х‚рЋз‚к", RoleId.Medic);
-        public static RoleInfo shifter = new RoleInfo("ѓVѓtѓ^Ѓ[", Shifter.color, "–рЉ„‚р“ь‚к‘Ц‚¦‚Д<color=#FF1919FF>ѓCѓ“ѓ|ѓXѓ^Ѓ[</color>‚рf‚н‚№", "–рЉ„‚р“ь‚к‘Ц‚¦‚ДѓCѓ“ѓ|ѓXѓ^Ѓ[‚рf‚н‚№", RoleId.Shifter);
-        public static RoleInfo swapper = new RoleInfo("ѓXѓЏѓbѓpЃ[", Swapper.color, "“Љ•[‚р“ь‚к‘Ц‚¦‚Д<color=#FF1919FF>ѓCѓ“ѓ|ѓXѓ^Ѓ[</color>‚р’З•ъ‚µ‚л", "“Љ•[‚р“ь‚к‘Ц‚¦‚ДѓCѓ“ѓ|ѓXѓ^Ѓ[‚рf‚н‚№", RoleId.Swapper);
-        public static RoleInfo seer = new RoleInfo("—\ЊѕЋТ", Seer.color, "ѓvѓЊѓCѓ„Ѓ[‚МЋЂ–S‚рЉm”FЏo—€‚й", "ѓvѓЊѓCѓ„Ѓ[‚МЋЂ–S‚рЉm”FЏo—€‚й", RoleId.Seer);
-        public static RoleInfo hacker = new RoleInfo("ѓnѓbѓJЃ[", Hacker.color, "ѓVѓXѓeѓЂ‚ЙѓnѓbѓLѓ“ѓO‚µ‚Д<color=#FF1919FF>ѓCѓ“ѓ|ѓXѓ^Ѓ[</color>‚рЊ©‚В‚Ї‚л", "ѓCѓ“ѓ|ѓXѓ^Ѓ[‚рЊ©‚В‚Ї‚й€Ч‚ЙѓnѓbѓLѓ“ѓO‚µ‚л", RoleId.Hacker);
-        public static RoleInfo niceMini = new RoleInfo("ѓiѓCѓXѓ~ѓj", Mini.color, "ђ¬’·‚·‚й‚Ь‚Е’N‚а‚ ‚И‚Ѕ‚рЏќ‚В‚Ї‚Ь‚№‚с", "ђ¬’·‚·‚й‚Ь‚Е’Э‚з‚к‚й‚И", RoleId.Mini);
-        public static RoleInfo evilMini = new RoleInfo("ѓCѓrѓ‹ѓ~ѓj", Palette.ImpostorRed, "ђ¬’·‚·‚й‚Ь‚Е’N‚а‚ ‚И‚Ѕ‚рЏќ‚В‚Ї‚Ь‚№‚с", "ђ¬’·ЊгЋEЉQ‚µ‚ДЋЂ‘М‚р‘ќ‚в‚№", RoleId.Mini);
-        public static RoleInfo tracker = new RoleInfo("ѓgѓ‰ѓbѓJЃ[", Tracker.color, "<color=#FF1919FF>ѓCѓ“ѓ|ѓXѓ^Ѓ[</color>‚р’ЗђХ‚µ‚л", "ѓCѓ“ѓ|ѓXѓ^Ѓ[‚р’ЗђХ‚µ‚л", RoleId.Tracker);
-        public static RoleInfo snitch = new RoleInfo("ѓXѓjѓbѓ`", Snitch.color, "ѓ^ѓXѓN‚рЉ®—№‚µ‚ДЃA<color=#FF1919FF>ѓCѓ“ѓ|ѓXѓ^Ѓ[</color>‚р’T‚№", "ѓ^ѓXѓN‚рЉ®—№‚і‚№‚ДѓCѓ“ѓ|ѓXѓ^Ѓ[‚р’T‚№", RoleId.Snitch);
-        public static RoleInfo jackal = new RoleInfo("ѓWѓѓѓbѓJѓ‹", Jackal.color, "Џџ‚В€Ч‚ЙѓNѓ‹Ѓ[ѓЃѓCѓg‚Ж<color=#FF1919FF>ѓCѓ“ѓ|ѓXѓ^Ѓ[</color>‚рЋEЉQ‚№‚ж", "ЉF‚рЋEЉQ‚№‚ж", RoleId.Jackal);
-        public static RoleInfo sidekick = new RoleInfo("ѓTѓCѓhѓLѓbѓN", Sidekick.color, "ѓWѓѓѓbѓJѓ‹‚ЄЉF‚рЋEЉQ‚·‚й‚М‚рЋи“`‚¦", "ѓWѓѓѓbѓJѓ‹‚ЄЉF‚рЋEЉQ‚·‚й‚М‚рЋи“`‚¦", RoleId.Sidekick);
-        public static RoleInfo spy = new RoleInfo("ѓXѓpѓC", Spy.color, "’‡ЉФ‚МђU‚и‚р‚µ‚Д<color=#FF1919FF>ѓCѓ“ѓ|ѓXѓ^Ѓ[</color>‚рЌ¬—ђ‚і‚№‚ж", "ѓCѓ“ѓ|ѓXѓ^Ѓ[‚рЌ¬—ђ‚і‚№‚ж", RoleId.Spy);
-        public static RoleInfo securityGuard = new RoleInfo("Њx”х€х", SecurityGuard.color, "ѓJѓЃѓ‰‚МђЭ’u‚Жѓxѓ“ѓg‚рЌЗ‚°", "ѓJѓЃѓ‰‚МђЭ’u‚Жѓxѓ“ѓg‚рЌЗ‚°", RoleId.SecurityGuard);
-        public static RoleInfo arsonist = new RoleInfo("•ъ‰О–‚", Arsonist.color, "‘ј‚МѓvѓЊѓCѓ„Ѓ[‚р”R‚в‚№", "‘ј‚МѓvѓЊѓCѓ„Ѓ[‚р”R‚в‚№", RoleId.Arsonist);
-        public static RoleInfo goodGuesser = new RoleInfo("ѓiѓCѓXѓQѓbѓTЃ[", Guesser.color, "ђ„—ќ‚µ‚ДЊ‚‚Д", "ђ„—ќ‚µ‚ДЊ‚‚Д", RoleId.Guesser);
-        public static RoleInfo badGuesser = new RoleInfo("ѓCѓrѓ‹ѓQѓbѓTЃ[", Palette.ImpostorRed, "ђ„—ќ‚µ‚ДЊ‚‚Д", "ђ„—ќ‚µ‚ДЊ‚‚Д", RoleId.Guesser);
-        public static RoleInfo bait = new RoleInfo("ѓxѓCѓg", Bait.color, "‰a‚рЋT‚ў‚Д<color=#FF1919FF>ѓCѓ“ѓ|ѓXѓ^Ѓ[</color>‚раt‚иЏo‚№", "‰a‚рЋT‚ў‚ДѓCѓ“ѓ|ѓXѓ^Ѓ[‚раt‚иЏo‚№", RoleId.Bait);
-        public static RoleInfo vulture = new RoleInfo("ѓnѓQѓ^ѓJ", Vulture.color, "Џџ‚В€Ч‚ЙЋЂ‘М‚рђH‚Ч‚л", "Џџ‚В€Ч‚ЙЋЂ‘М‚рђH‚Ч‚л", RoleId.Vulture);
-        public static RoleInfo medium = new RoleInfo("—м”}Ћt", Medium.color, "Џо•с‚р“ѕ‚й€Ч‚Й—H—м‚ЙЋї–в‚µ‚л", "Џо•с‚р“ѕ‚й€Ч‚Й—H—м‚ЙЋї–в‚µ‚л", RoleId.Medium);
-        public static RoleInfo madmate = new RoleInfo("‹¶ђl", Madmate.color, "<color=#FF1919FF>ѓCѓ“ѓ|ѓXѓ^Ѓ[</color>‚рЋи“`‚¦", "ѓCѓ“ѓ|ѓXѓ^Ѓ[‚рЋи“`‚¦", RoleId.Madmate);
-        public static RoleInfo impostor = new RoleInfo("ѓCѓ“ѓ|ѓXѓ^Ѓ[", Palette.ImpostorRed, Helpers.cs(Palette.ImpostorRed, "Џж‘g€х‚МЋdЋ–‚р–WЉQ‚µ‚ДЋEЉQ‚µ‚л"), "Џж‘g€х‚МЋdЋ–‚р–WЉQ‚µ‚ДЋEЉQ‚µ‚л", RoleId.Impostor);
-        public static RoleInfo crewmate = new RoleInfo("Џж‘g€х", Color.white, "<color=#FF1919FF>ѓCѓ“ѓ|ѓXѓ^Ѓ[</color>‚рЊ©‚В‚Ї‚л", "ЋdЋ–‚рЉ®—№‚і‚№‚ж", RoleId.Crewmate);
-        public static RoleInfo lover = new RoleInfo("—цђl", Lovers.color, $"—цђl‚Жђ¶‚«Ћc‚к", $"—цђl‚Жђ¶‚«Ћc‚к", RoleId.Lover);
+        public static RoleInfo jester = new RoleInfo("гЃ¦г‚‹гЃ¦г‚‹", Jester.color, "жЉ•зҐЁгЃ§иїЅж”ѕгЃ•г‚Њг‚Ќ", "жЉ•зҐЁгЃ§иїЅж”ѕгЃ•г‚Њг‚Ќ", RoleId.Jester);
+        public static RoleInfo mayor = new RoleInfo("её‚й•·", Mayor.color, "гЃ‚гЃЄгЃџгЃ®жЉ•зҐЁгЃЇ2зҐЁгЃ«гЃЄг‚ЉгЃѕгЃ™", "гЃ‚гЃЄгЃџгЃ®жЉ•зҐЁгЃЇ2зҐЁгЃ«гЃЄг‚ЉгЃѕгЃ™", RoleId.Mayor);
+        public static RoleInfo engineer = new RoleInfo("г‚Ёгѓіг‚ёгѓ‹г‚ў", Engineer.color, "и€№гЃ®й‡Ќи¦ЃгЃЄг‚·г‚№гѓ†гѓ г‚’з¶­жЊЃе‡єжќҐгЃѕгЃ™", "и€№г‚’дї®зђ†е‡єжќҐгЃѕгЃ™", RoleId.Engineer);
+        public static RoleInfo sheriff = new RoleInfo("г‚·г‚§гѓЄгѓ•", Sheriff.color, "<color=#FF1919FF>г‚¤гѓігѓќг‚№г‚їгѓј</color>г‚’ж®єе®іе‡єжќҐгЃѕгЃ™", "дєєе¤–г‚’ж®єе®іе‡єжќҐгЃѕгЃ™", RoleId.Sheriff);
+        public static RoleInfo lighter = new RoleInfo("гѓ©г‚¤г‚їгѓј", Lighter.color, "гЃ‚гЃЄгЃџгЃ®е…‰гЃЇж±єгЃ—гЃ¦ж¶€гЃ€гЃѕгЃ›г‚“", "гЃ‚гЃЄгЃџгЃ®е…‰гЃЇж±єгЃ—гЃ¦ж¶€гЃ€гЃѕгЃ›г‚“", RoleId.Lighter);
+        public static RoleInfo godfather = new RoleInfo("зµ„й•·", Godfather.color, "д№—зµ„е“Ўг‚’ж®єе®ігЃ›г‚€", "д№—зµ„е“Ўг‚’ж®єе®ігЃ›г‚€", RoleId.Godfather);
+        public static RoleInfo mafioso = new RoleInfo("зµ„е“Ў", Mafioso.color, "<color=#FF1919FF>гѓћгѓ•г‚Јг‚ў</color>гЃЁеЌ”еЉ›гЃ—гЃ¦д№—зµ„е“Ўг‚’ж®єе®ігЃ›г‚€", "д№—зµ„е“Ўг‚’ж®єе®ігЃ›г‚€", RoleId.Mafioso);
+        public static RoleInfo janitor = new RoleInfo("г‚ёг‚§гѓ‹г‚їгѓј", Janitor.color, "ж­»дЅ“г‚’йљ гЃ™гЃ“гЃЁгЃ§<color=#FF1919FF>гѓћгѓ•г‚Јг‚ў</color>гЃЁеЌ”еЉ›гЃ™г‚‹", "ж­»дЅ“г‚’йљ гЃ›", RoleId.Janitor);
+        public static RoleInfo morphling = new RoleInfo("гѓўгѓјгѓ•г‚Јгѓіг‚°", Morphling.color, "и¦‹гЃ¤гЃ‹г‚‰гЃЄгЃ„г‚€гЃ†гЃ«е§їг‚’е¤‰гЃ€гЃѕгЃ—г‚‡гЃ†", "и¦‹гЃџз›®г‚’е¤‰гЃ€гЃ¦жѓ‘г‚ЏгЃ›", RoleId.Morphling);
+        public static RoleInfo camouflager = new RoleInfo("г‚«гѓўгѓ•гѓ©г‚ёгѓЈгѓј", Camouflager.color, "д№—зµ„е“Ўг‚’г‚«гѓўгѓ•гѓ©гѓјг‚ёгѓҐгЃ—гЃ¦ж®єгЃ›", "д»–г‚’йљ гЃ›", RoleId.Camouflager);
+        public static RoleInfo evilHacker = new RoleInfo("г‚¤гѓ“гѓ«гѓЏгѓѓг‚«гѓј", EvilHacker.color, "г‚·г‚№гѓ†гѓ г‚’гѓЏгѓѓг‚ЇгЃ—гЃ¦д№—зµ„е“Ўг‚’ж®єгЃ›", "з‹‚дєєг‚’дЅњж€ђгЃ—гЃ¦д№—зµ„е“Ўг‚’жѓ‘г‚ЏгЃ›г‚Ќ", RoleId.EvilHacker);
+        public static RoleInfo vampire = new RoleInfo("еђёиЎЂй¬ј", Vampire.color, "гЃ‹гЃїе‚·гЃ§д№—зµ„е“Ўг‚’ж®єгЃ›", "д№—зµ„е“Ўг‚’е™›г‚Ѓ", RoleId.Vampire);
+        public static RoleInfo eraser = new RoleInfo("г‚¤гѓ¬гѓјг‚µгѓј", Eraser.color, "д№—зµ„е“Ўг‚’ж®єгЃ—гЂЃеЅјг‚‰гЃ®еЅ№е‰Іг‚’ж¶€гЃ›", "д№—зµ„е“ЎгЃ®еЅ№е‰Іг‚’ж¶€гЃ›", RoleId.Eraser);
+        public static RoleInfo trickster = new RoleInfo("гѓ€гѓЄгѓѓг‚Їг‚№г‚їгѓј", Trickster.color, "гЃігЃЈгЃЏг‚Љз®±г‚’дЅїгЃЈгЃ¦д»–гЃ®дєєг‚’й©љгЃ‹гЃ›г‚Ќ", "ж•µг‚’й©љгЃ‹гЃ›г‚Ќ", RoleId.Trickster);
+        public static RoleInfo cleaner = new RoleInfo("жё…жЋѓе“Ў", Cleaner.color, "д№—зµ„е“Ўг‚’ж®єгЃ—гЂЃз—•и·Ўг‚’ж®‹гЃ™гЃЄ", "ж­»дЅ“г‚’з‰‡д»гЃ‘г‚Ќ", RoleId.Cleaner);
+        public static RoleInfo warlock = new RoleInfo("г‚¦г‚©гѓјгѓ­гѓѓг‚Ї", Warlock.color, "д№—зµ„е“Ўг‚’е‘ЄгЃ„ж®єгЃ›", "д№—зµ„е“Ўг‚’е‘ЄгЃ„ж®єгЃ›", RoleId.Warlock);
+        public static RoleInfo bountyHunter = new RoleInfo("гѓђг‚¦гѓігѓ†г‚ЈгѓјгѓЏгѓіг‚їгѓј", BountyHunter.color, "жЁ™зљ„г‚’з‹™гЃЈгЃ¦ж­»дЅ“г‚’еў—г‚„гЃ›", "жЁ™зљ„г‚’з‹™гЃЈгЃ¦ж­»дЅ“г‚’еў—г‚„гЃ›", RoleId.BountyHunter);
+        public static RoleInfo detective = new RoleInfo("жЋўеЃµ", Detective.color, "и¶іи·Ўг‚’иЄїгЃ№гЃ¦<color=#FF1919FF>г‚¤гѓігѓќг‚№г‚їгѓј</color>г‚’и¦‹гЃ¤гЃ‘г‚Ќ", "и¶іи·Ўг‚’иЄїгЃ№г‚Ќ", RoleId.Detective);
+        public static RoleInfo timeMaster = new RoleInfo("г‚їг‚¤гѓ гѓћг‚№г‚їгѓј", TimeMaster.color, "г‚їг‚¤гѓ г‚·гѓјгѓ«гѓ‰гЃ§д№—зµ„е“Ўг‚’е®€г‚Њ", "г‚їг‚¤гѓ г‚·гѓјгѓ«гѓ‰гЃ§д№—зµ„е“Ўг‚’е®€г‚Њ", RoleId.TimeMaster);
+        public static RoleInfo medic = new RoleInfo("гѓЎгѓ‡г‚Јгѓѓг‚Ї", Medic.color, "з›ѕг‚’дЅїз”ЁгЃ—гЃ¦д№—зµ„е“Ўг‚’е®€г‚Њ", "з›ѕг‚’дЅїз”ЁгЃ—гЃ¦д№—зµ„е“Ўг‚’е®€г‚Њ", RoleId.Medic);
+        public static RoleInfo shifter = new RoleInfo("г‚·гѓ•г‚їгѓј", Shifter.color, "еЅ№е‰Іг‚’е…Ґг‚Њж›їгЃ€гЃ¦<color=#FF1919FF>г‚¤гѓігѓќг‚№г‚їгѓј</color>г‚’жѓ‘г‚ЏгЃ›", "еЅ№е‰Іг‚’е…Ґг‚Њж›їгЃ€гЃ¦г‚¤гѓігѓќг‚№г‚їгѓјг‚’жѓ‘г‚ЏгЃ›", RoleId.Shifter);
+        public static RoleInfo swapper = new RoleInfo("г‚№гѓЇгѓѓгѓ‘гѓј", Swapper.color, "жЉ•зҐЁг‚’е…Ґг‚Њж›їгЃ€гЃ¦<color=#FF1919FF>г‚¤гѓігѓќг‚№г‚їгѓј</color>г‚’иїЅж”ѕгЃ—г‚Ќ", "жЉ•зҐЁг‚’е…Ґг‚Њж›їгЃ€гЃ¦г‚¤гѓігѓќг‚№г‚їгѓјг‚’жѓ‘г‚ЏгЃ›", RoleId.Swapper);
+        public static RoleInfo seer = new RoleInfo("дє€иЁЂиЂ…", Seer.color, "гѓ—гѓ¬г‚¤гѓ¤гѓјгЃ®ж­»дєЎг‚’зўєиЄЌе‡єжќҐг‚‹", "гѓ—гѓ¬г‚¤гѓ¤гѓјгЃ®ж­»дєЎг‚’зўєиЄЌе‡єжќҐг‚‹", RoleId.Seer);
+        public static RoleInfo hacker = new RoleInfo("гѓЏгѓѓг‚«гѓј", Hacker.color, "г‚·г‚№гѓ†гѓ гЃ«гѓЏгѓѓг‚­гѓіг‚°гЃ—гЃ¦<color=#FF1919FF>г‚¤гѓігѓќг‚№г‚їгѓј</color>г‚’и¦‹гЃ¤гЃ‘г‚Ќ", "г‚¤гѓігѓќг‚№г‚їгѓјг‚’и¦‹гЃ¤гЃ‘г‚‹з‚єгЃ«гѓЏгѓѓг‚­гѓіг‚°гЃ—г‚Ќ", RoleId.Hacker);
+        public static RoleInfo niceMini = new RoleInfo("гѓЉг‚¤г‚№гѓџгѓ‹", Mini.color, "ж€ђй•·гЃ™г‚‹гЃѕгЃ§иЄ°г‚‚гЃ‚гЃЄгЃџг‚’е‚·гЃ¤гЃ‘гЃѕгЃ›г‚“", "ж€ђй•·гЃ™г‚‹гЃѕгЃ§еђЉг‚‰г‚Њг‚‹гЃЄ", RoleId.Mini);
+        public static RoleInfo evilMini = new RoleInfo("г‚¤гѓ“гѓ«гѓџгѓ‹", Palette.ImpostorRed, "ж€ђй•·гЃ™г‚‹гЃѕгЃ§иЄ°г‚‚гЃ‚гЃЄгЃџг‚’е‚·гЃ¤гЃ‘гЃѕгЃ›г‚“", "ж€ђй•·еѕЊж®єе®ігЃ—гЃ¦ж­»дЅ“г‚’еў—г‚„гЃ›", RoleId.Mini);
+        public static RoleInfo tracker = new RoleInfo("гѓ€гѓ©гѓѓг‚«гѓј", Tracker.color, "<color=#FF1919FF>г‚¤гѓігѓќг‚№г‚їгѓј</color>г‚’иїЅи·ЎгЃ—г‚Ќ", "г‚¤гѓігѓќг‚№г‚їгѓјг‚’иїЅи·ЎгЃ—г‚Ќ", RoleId.Tracker);
+        public static RoleInfo snitch = new RoleInfo("г‚№гѓ‹гѓѓгѓЃ", Snitch.color, "г‚їг‚№г‚Їг‚’е®Њдє†гЃ—гЃ¦гЂЃ<color=#FF1919FF>г‚¤гѓігѓќг‚№г‚їгѓј</color>г‚’жЋўгЃ›", "г‚їг‚№г‚Їг‚’е®Њдє†гЃ•гЃ›гЃ¦г‚¤гѓігѓќг‚№г‚їгѓјг‚’жЋўгЃ›", RoleId.Snitch);
+        public static RoleInfo jackal = new RoleInfo("г‚ёгѓЈгѓѓг‚«гѓ«", Jackal.color, "е‹ќгЃ¤з‚єгЃ«г‚Їгѓ«гѓјгѓЎг‚¤гѓ€гЃЁ<color=#FF1919FF>г‚¤гѓігѓќг‚№г‚їгѓј</color>г‚’ж®єе®ігЃ›г‚€", "зљ†г‚’ж®єе®ігЃ›г‚€", RoleId.Jackal);
+        public static RoleInfo sidekick = new RoleInfo("г‚µг‚¤гѓ‰г‚­гѓѓг‚Ї", Sidekick.color, "г‚ёгѓЈгѓѓг‚«гѓ«гЃЊзљ†г‚’ж®єе®ігЃ™г‚‹гЃ®г‚’ж‰‹дјќгЃ€", "г‚ёгѓЈгѓѓг‚«гѓ«гЃЊзљ†г‚’ж®єе®ігЃ™г‚‹гЃ®г‚’ж‰‹дјќгЃ€", RoleId.Sidekick);
+        public static RoleInfo spy = new RoleInfo("г‚№гѓ‘г‚¤", Spy.color, "д»Ій–“гЃ®жЊЇг‚Љг‚’гЃ—гЃ¦<color=#FF1919FF>г‚¤гѓігѓќг‚№г‚їгѓј</color>г‚’ж··д№±гЃ•гЃ›г‚€", "г‚¤гѓігѓќг‚№г‚їгѓјг‚’ж··д№±гЃ•гЃ›г‚€", RoleId.Spy);
+        public static RoleInfo securityGuard = new RoleInfo("и­¦е‚™е“Ў", SecurityGuard.color, "г‚«гѓЎгѓ©гЃ®иЁ­зЅ®гЃЁгѓ™гѓігѓ€г‚’еЎћгЃ’", "г‚«гѓЎгѓ©гЃ®иЁ­зЅ®гЃЁгѓ™гѓігѓ€г‚’еЎћгЃ’", RoleId.SecurityGuard);
+        public static RoleInfo arsonist = new RoleInfo("ж”ѕзЃ«й­”", Arsonist.color, "д»–гЃ®гѓ—гѓ¬г‚¤гѓ¤гѓјг‚’з‡ѓг‚„гЃ›", "д»–гЃ®гѓ—гѓ¬г‚¤гѓ¤гѓјг‚’з‡ѓг‚„гЃ›", RoleId.Arsonist);
+        public static RoleInfo goodGuesser = new RoleInfo("гѓЉг‚¤г‚№г‚Ігѓѓг‚µгѓј", Guesser.color, "жЋЁзђ†гЃ—гЃ¦ж’ѓгЃ¦", "жЋЁзђ†гЃ—гЃ¦ж’ѓгЃ¦", RoleId.Guesser);
+        public static RoleInfo badGuesser = new RoleInfo("г‚¤гѓ“гѓ«г‚Ігѓѓг‚µгѓј", Palette.ImpostorRed, "жЋЁзђ†гЃ—гЃ¦ж’ѓгЃ¦", "жЋЁзђ†гЃ—гЃ¦ж’ѓгЃ¦", RoleId.Guesser);
+        public static RoleInfo bait = new RoleInfo("гѓ™г‚¤гѓ€", Bait.color, "й¤Њг‚’ж’’гЃ„гЃ¦<color=#FF1919FF>г‚¤гѓігѓќг‚№г‚їгѓј</color>г‚’з‚™г‚Ље‡єгЃ›", "й¤Њг‚’ж’’гЃ„гЃ¦г‚¤гѓігѓќг‚№г‚їгѓјг‚’з‚™г‚Ље‡єгЃ›", RoleId.Bait);
+        public static RoleInfo vulture = new RoleInfo("гѓЏг‚Іг‚їг‚«", Vulture.color, "е‹ќгЃ¤з‚єгЃ«ж­»дЅ“г‚’йЈџгЃ№г‚Ќ", "е‹ќгЃ¤з‚єгЃ«ж­»дЅ“г‚’йЈџгЃ№г‚Ќ", RoleId.Vulture);
+        public static RoleInfo medium = new RoleInfo("йњЉеЄ’её«", Medium.color, "жѓ…е ±г‚’еѕ—г‚‹з‚єгЃ«е№ЅйњЉгЃ«иіЄе•ЏгЃ—г‚Ќ", "жѓ…е ±г‚’еѕ—г‚‹з‚єгЃ«е№ЅйњЉгЃ«иіЄе•ЏгЃ—г‚Ќ", RoleId.Medium);
+        public static RoleInfo madmate = new RoleInfo("з‹‚дєє", Madmate.color, "<color=#FF1919FF>г‚¤гѓігѓќг‚№г‚їгѓј</color>г‚’ж‰‹дјќгЃ€", "г‚¤гѓігѓќг‚№г‚їгѓјг‚’ж‰‹дјќгЃ€", RoleId.Madmate);
+        public static RoleInfo lawyer = new RoleInfo("ејЃи­·еЈ«", Lawyer.color, "дѕќй јдё»г‚’е®€г‚Њ", "дѕќй јдё»г‚’е®€г‚Њ", RoleId.Lawyer, true);
+        public static RoleInfo pursuer = new RoleInfo("иїЅи·ЎиЂ…", Pursuer.color, "<color=#FF1919FF>г‚¤гѓігѓќг‚№г‚їгѓј</color>г‚’з„ЎеЉ›еЊ–гЃ•гЃ›г‚Ќ", "г‚¤гѓігѓќг‚№г‚їгѓјг‚’з„ЎеЉ›еЊ–гЃ•гЃ›г‚Ќ", RoleId.Pursuer);
+        public static RoleInfo impostor = new RoleInfo("г‚¤гѓігѓќг‚№г‚їгѓј", Palette.ImpostorRed, Helpers.cs(Palette.ImpostorRed, "д№—зµ„е“ЎгЃ®д»•дє‹г‚’е¦Ёе®ігЃ—гЃ¦ж®єе®ігЃ—г‚Ќ"), "д№—зµ„е“ЎгЃ®д»•дє‹г‚’е¦Ёе®ігЃ—гЃ¦ж®єе®ігЃ—г‚Ќ", RoleId.Impostor);
+        public static RoleInfo crewmate = new RoleInfo("д№—зµ„е“Ў", Color.white, "<color=#FF1919FF>г‚¤гѓігѓќг‚№г‚їгѓј</color>г‚’и¦‹гЃ¤гЃ‘г‚Ќ", "д»•дє‹г‚’е®Њдє†гЃ•гЃ›г‚€", RoleId.Crewmate);
+        public static RoleInfo lover = new RoleInfo("жЃ‹дєє", Lovers.color, $"жЃ‹дєєгЃЁз”џгЃЌж®‹г‚Њ", $"жЃ‹дєєгЃЁз”џгЃЌж®‹г‚Њ", RoleId.Lover);
+        public static RoleInfo witch = new RoleInfo("й­”еҐі", Witch.color, "ж•µгЃ«е‘Єж–‡г‚’гЃ‹гЃ‘г‚Ќ", "ж•µгЃ«е‘Єж–‡г‚’гЃ‹гЃ‘г‚Ќ", RoleId.Witch);
 
         public static List<RoleInfo> allRoleInfos = new List<RoleInfo>() {
             impostor,
@@ -81,6 +84,7 @@ namespace TheOtherRoles
             cleaner,
             warlock,
             bountyHunter,
+            witch,
             niceMini,
             evilMini,
             goodGuesser,
@@ -91,6 +95,8 @@ namespace TheOtherRoles
             jackal,
             sidekick,
             vulture,
+            pursuer,
+            lawyer,
             crewmate,
             shifter,
             mayor,
@@ -133,6 +139,7 @@ namespace TheOtherRoles
             if (p == Trickster.trickster) infos.Add(trickster);
             if (p == Cleaner.cleaner) infos.Add(cleaner);
             if (p == Warlock.warlock) infos.Add(warlock);
+            if (p == Witch.witch) infos.Add(witch);
             if (p == Detective.detective) infos.Add(detective);
             if (p == TimeMaster.timeMaster) infos.Add(timeMaster);
             if (p == Medic.medic) infos.Add(medic);
@@ -154,6 +161,8 @@ namespace TheOtherRoles
             if (p == Vulture.vulture) infos.Add(vulture);
             if (p == Medium.medium) infos.Add(medium);
             if (p == Madmate.madmate) infos.Add(madmate);
+            if (p == Lawyer.lawyer) infos.Add(lawyer);
+            if (p == Pursuer.pursuer) infos.Add(pursuer);
 
             // Default roles
             if (infos.Count == 0 && p.Data.Role.IsImpostor) infos.Add(impostor); // Just Impostor
@@ -165,10 +174,10 @@ namespace TheOtherRoles
             return infos;
         }
 
-        public static String GetRole(PlayerControl p) {
+        public static String GetRolesString(PlayerControl p, bool useColors) {
             string roleName;
-            roleName = String.Join("", getRoleInfoForPlayer(p).Select(x => x.name).ToArray());
-            if (roleName.Contains("Lover")) roleName.Replace("Lover", "");
+            roleName = String.Join(" ", getRoleInfoForPlayer(p).Select(x => useColors ? Helpers.cs(x.color, x.name) : x.name).ToArray());
+            if (Lawyer.target != null && p.PlayerId == Lawyer.target.PlayerId && PlayerControl.LocalPlayer != Lawyer.target) roleName += (useColors ? Helpers.cs(Pursuer.color, " В§") : " В§");
             return roleName;
         }
     }

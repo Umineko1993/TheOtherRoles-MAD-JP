@@ -95,6 +95,14 @@ namespace TheOtherRoles {
         public static CustomOption bountyHunterShowArrow;
         public static CustomOption bountyHunterArrowUpdateIntervall;
 
+        public static CustomOption witchSpawnRate;
+        public static CustomOption witchCooldown;
+        public static CustomOption witchAdditionalCooldown;
+        public static CustomOption witchCanSpellAnyone;
+        public static CustomOption witchSpellCastingDuration;
+        public static CustomOption witchTriggerBothCooldowns;
+        public static CustomOption witchVoteSavesTargets;
+
         public static CustomOption shifterSpawnRate;
         public static CustomOption shifterShiftsModifiers;
 
@@ -208,11 +216,21 @@ namespace TheOtherRoles {
         public static CustomOption madmateShortTasks;
         public static CustomOption madmateLongTasks;
 
+        public static CustomOption lawyerSpawnRate;
+        public static CustomOption lawyerTargetKnows;
+        public static CustomOption lawyerWinsAfterMeetings;
+        public static CustomOption lawyerNeededMeetings;
+        public static CustomOption lawyerVision;
+        public static CustomOption lawyerKnowsRole;
+        public static CustomOption pursuerCooldown;
+        public static CustomOption pursuerBlanksNumber;
+
         public static CustomOption maxNumberOfMeetings;
         public static CustomOption blockSkippingInEmergencyMeetings;
         public static CustomOption noVoteIsSelfVote;
         public static CustomOption hidePlayerNames;
         public static CustomOption allowParallelMedBayScans;
+        public static CustomOption dynamicMap;
 
 
         internal static Dictionary<byte, byte[]> blockedRolePairings = new Dictionary<byte, byte[]>();
@@ -290,6 +308,14 @@ namespace TheOtherRoles {
             bountyHunterShowArrow = CustomOption.Create(324, "標的を指し示す矢印を表示するか", true, bountyHunterSpawnRate);
             bountyHunterArrowUpdateIntervall = CustomOption.Create(325, "矢印更新時間", 15f, 2.5f, 60f, 2.5f, bountyHunterShowArrow);
 
+            witchSpawnRate = CustomOption.Create(370, cs(Witch.color, "魔女"), rates, null, true);
+            witchCooldown = CustomOption.Create(371, "呪文詠唱のクールダウン", 30f, 10f, 120f, 5f, witchSpawnRate);
+            witchAdditionalCooldown = CustomOption.Create(372, "魔女追加のクールダウン", 10f, 0f, 60f, 5f, witchSpawnRate);
+            witchCanSpellAnyone = CustomOption.Create(373, "誰でも詠唱出来るか", false, witchSpawnRate);
+            witchSpellCastingDuration = CustomOption.Create(374, "呪文詠唱にかかる時間", 1f, 0f, 10f, 1f, witchSpawnRate);
+            witchTriggerBothCooldowns = CustomOption.Create(375, "両方のクールダウンをトリガーするか", true, witchSpawnRate);
+            witchVoteSavesTargets = CustomOption.Create(376, "魔女に投票すると全てのターゲットが保存されるか", true, witchSpawnRate);
+
             miniSpawnRate = CustomOption.Create(180, cs(Mini.color, "ミニ(子供)"), rates, null, true);
             miniGrowingUpDuration = CustomOption.Create(181, "成長速度", 400f, 100f, 1500f, 100f, miniSpawnRate);
 
@@ -331,6 +357,15 @@ namespace TheOtherRoles {
             vultureNumberToWin = CustomOption.Create(342, "勝利までに捕食する死体の数", 4f, 0f, 5f, 1f, vultureSpawnRate);
             vultureCanUseVents = CustomOption.Create(343, "通気口を使用出来るか", true, vultureSpawnRate);
             vultureShowArrows = CustomOption.Create(344, "死体を指す矢印を表示するか", true, vultureSpawnRate);
+
+            lawyerSpawnRate = CustomOption.Create(350, cs(Lawyer.color, "弁護士"), rates, null, true);
+            lawyerTargetKnows = CustomOption.Create(351, "依頼主を知る事が出来るか", true, lawyerSpawnRate);
+            lawyerWinsAfterMeetings = CustomOption.Create(352, "会議の後に勝利するか", false, lawyerSpawnRate);
+            lawyerNeededMeetings = CustomOption.Create(353, "勝利の為に必要な会議数", 5f, 1f, 15f, 1f, lawyerWinsAfterMeetings);
+            lawyerVision = CustomOption.Create(354, "視界", 1f, 0.25f, 3f, 0.25f, lawyerSpawnRate);
+            lawyerKnowsRole = CustomOption.Create(355, "依頼主の役職を知る事が出来るか", false, lawyerSpawnRate);
+            pursuerCooldown = CustomOption.Create(356, "インポスター無力化クールダウン", 30f, 5f, 60f, 2.5f, lawyerSpawnRate);
+            pursuerBlanksNumber = CustomOption.Create(357, "インポスター無力化の回数", 5f, 0f, 20f, 1f, lawyerSpawnRate);
 
             shifterSpawnRate = CustomOption.Create(70, cs(Shifter.color, "シフター"), rates, null, true);
             shifterShiftsModifiers = CustomOption.Create(71, "対象のステータスもシフトするか", false, shifterSpawnRate);
@@ -433,6 +468,7 @@ namespace TheOtherRoles {
             noVoteIsSelfVote = CustomOption.Create(5, "自投票を禁止にするか", false, blockSkippingInEmergencyMeetings);
             hidePlayerNames = CustomOption.Create(6, "名前を表示しないか", false);
             allowParallelMedBayScans = CustomOption.Create(7, "医務室スキャンタスクの同時進行を許可するか", false);
+            dynamicMap = CustomOption.Create(8, "ランダムマップで遊ぶか", false, null, false);
 
             blockedRolePairings.Add((byte)RoleId.Vampire, new [] { (byte)RoleId.Warlock});
             blockedRolePairings.Add((byte)RoleId.Warlock, new [] { (byte)RoleId.Vampire});
