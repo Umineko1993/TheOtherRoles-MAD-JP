@@ -276,7 +276,7 @@ namespace TheOtherRoles {
             evilHackerSpawnRate = CustomOption.Create(39, cs(EvilHacker.color, "イビルハッカー"), rates, null, true);
             evilHackerCanCreateMadmate = CustomOption.Create(38, "狂人を作る事が出来るか", false, evilHackerSpawnRate);
             createdMadmateCanDieToSheriff = CustomOption.Create(37, "作成した狂人はシェリフ殺害されるか", false, evilHackerCanCreateMadmate);
-            createdMadmateCanEnterVents = CustomOption.Create(36, "作成した狂人は通気口を使用出来るか", false, evilHackerCanCreateMadmate);
+            createdMadmateCanEnterVents = CustomOption.Create(36, "作成した狂人は通気孔を使用出来るか", false, evilHackerCanCreateMadmate);
             createdMadmateHasImpostorVision = CustomOption.Create(35, "作成した狂人はインポスターと同じ視界にするか", false, evilHackerCanCreateMadmate);
             createdMadmateNoticeImpostors = CustomOption.Create(34, "作成した狂人が仕事を完了したらインポスターを知る事が出来るか", false, evilHackerCanCreateMadmate);
 
@@ -342,20 +342,20 @@ namespace TheOtherRoles {
             jackalSpawnRate = CustomOption.Create(220, cs(Jackal.color, "ジャッカル"), rates, null, true);
             jackalKillCooldown = CustomOption.Create(221, "ジャッカル陣営のキルクール時間", 30f, 10f, 60f, 2.5f, jackalSpawnRate);
             jackalCreateSidekickCooldown = CustomOption.Create(222, "サイドキック指名クールダウン", 30f, 10f, 60f, 2.5f, jackalSpawnRate);
-            jackalCanUseVents = CustomOption.Create(223, "通気口を使用出来るか", true, jackalSpawnRate);
+            jackalCanUseVents = CustomOption.Create(223, "通気孔を使用出来るか", true, jackalSpawnRate);
             jackalCanCreateSidekick = CustomOption.Create(224, "サイドキックを指名出来るか", false, jackalSpawnRate);
             sidekickPromotesToJackal = CustomOption.Create(225, "ジャッカル死亡後サイドキックが昇格するか", false, jackalSpawnRate);
             sidekickCanKill = CustomOption.Create(226, "サイドキックが殺害出来るか", false, jackalSpawnRate);
-            sidekickCanUseVents = CustomOption.Create(227, "サイドキックが通気口を使用出来るか", true, jackalSpawnRate);
+            sidekickCanUseVents = CustomOption.Create(227, "サイドキックが通気孔を使用出来るか", true, jackalSpawnRate);
             jackalPromotedFromSidekickCanCreateSidekick = CustomOption.Create(228, "昇格したジャッカルが新たにサイドキックを指名出来るか", true, jackalSpawnRate);
             jackalCanCreateSidekickFromImpostor = CustomOption.Create(229, "インポスターをサイドキックに出来るか", true, jackalSpawnRate);
             jackalAndSidekickHaveImpostorVision = CustomOption.Create(430, "インポスターと同じ視界にするか", false, jackalSpawnRate);
-            //jackalCanSeeEngineerVent = CustomOption.Create(431, "ジャッカルはエンジニアが通気口にいるかを判別出来るか", false, jackalSpawnRate);
+            //jackalCanSeeEngineerVent = CustomOption.Create(431, "ジャッカルはエンジニアが通気孔にいるかを判別出来るか", false, jackalSpawnRate);
 
             vultureSpawnRate = CustomOption.Create(340, cs(Vulture.color, "ハゲタカ"), rates, null, true);
             vultureCooldown = CustomOption.Create(341, "捕食クールダウン", 15f, 10f, 60f, 2.5f, vultureSpawnRate);
             vultureNumberToWin = CustomOption.Create(342, "勝利までに捕食する死体の数", 4f, 0f, 5f, 1f, vultureSpawnRate);
-            vultureCanUseVents = CustomOption.Create(343, "通気口を使用出来るか", true, vultureSpawnRate);
+            vultureCanUseVents = CustomOption.Create(343, "通気孔を使用出来るか", true, vultureSpawnRate);
             vultureShowArrows = CustomOption.Create(344, "死体を指す矢印を表示するか", true, vultureSpawnRate);
 
             lawyerSpawnRate = CustomOption.Create(350, cs(Lawyer.color, "弁護士"), rates, null, true);
@@ -374,8 +374,8 @@ namespace TheOtherRoles {
 
             engineerSpawnRate = CustomOption.Create(90, cs(Engineer.color, "エンジニア"), rates, null, true);
             engineerNumberOfFixes = CustomOption.Create(91, "サボタージュ修理可能数", 1f, 0f, 3f, 1f, engineerSpawnRate);
-            engineerHighlightForImpostors = CustomOption.Create(92, "インポスターに通気口使用を視認されるか", true, engineerSpawnRate);
-            engineerHighlightForTeamJackal = CustomOption.Create(93, "ジャッカル陣営に通気口使用を視認されるか", true, engineerSpawnRate);
+            engineerHighlightForImpostors = CustomOption.Create(92, "インポスターに通気孔使用を視認されるか", true, engineerSpawnRate);
+            engineerHighlightForTeamJackal = CustomOption.Create(93, "ジャッカル陣営に通気孔使用を視認されるか", true, engineerSpawnRate);
 
             sheriffSpawnRate = CustomOption.Create(100, cs(Sheriff.color, "シェリフ(保安官)"), rates, null, true);
             sheriffCooldown = CustomOption.Create(101, "シェリフクールダウン", 30f, 10f, 60f, 2.5f, sheriffSpawnRate);
@@ -435,17 +435,17 @@ namespace TheOtherRoles {
             spySpawnRate = CustomOption.Create(240, cs(Spy.color, "スパイ"), rates, null, true);
             spyCanDieToSheriff = CustomOption.Create(241, "スパイがシェリフに殺害されるか", false, spySpawnRate);
             spyImpostorsCanKillAnyone = CustomOption.Create(242, "スパイがインポスターに殺害されるか", true, spySpawnRate);
-            spyCanEnterVents = CustomOption.Create(243, "通気口を使用出来るか", false, spySpawnRate);
+            spyCanEnterVents = CustomOption.Create(243, "通気孔を使用出来るか", false, spySpawnRate);
             spyHasImpostorVision = CustomOption.Create(244, "インポスターと同じ視界にするか", false, spySpawnRate);
 
             securityGuardSpawnRate = CustomOption.Create(280, cs(SecurityGuard.color, "警備員"), rates, null, true);
             securityGuardCooldown = CustomOption.Create(281, "警備員クールダウン", 30f, 10f, 60f, 2.5f, securityGuardSpawnRate);
             securityGuardTotalScrews = CustomOption.Create(282, "ネジ所持数", 7f, 1f, 15f, 1f, securityGuardSpawnRate);
             securityGuardCamPrice = CustomOption.Create(283, "カメラ設置に必要なネジの数", 2f, 1f, 15f, 1f, securityGuardSpawnRate);
-            securityGuardVentPrice = CustomOption.Create(284, "通気口を塞ぐのに必要なネジの数", 1f, 1f, 15f, 1f, securityGuardSpawnRate);
+            securityGuardVentPrice = CustomOption.Create(284, "通気孔を塞ぐのに必要なネジの数", 1f, 1f, 15f, 1f, securityGuardSpawnRate);
 
             baitSpawnRate = CustomOption.Create(330, cs(Bait.color, "ベイト(餌)"), rates, null, true);
-            baitHighlightAllVents = CustomOption.Create(331, "通気口使用時にベントを発光させるか", false, baitSpawnRate);
+            baitHighlightAllVents = CustomOption.Create(331, "通気孔使用時にベントを発光させるか", false, baitSpawnRate);
             baitReportDelay = CustomOption.Create(332, "餌自身の殺害後の報告までの時間", 0f, 0f, 10f, 1f, baitSpawnRate);
 
             mediumSpawnRate = CustomOption.Create(360, cs(Medium.color, "霊媒師"), rates, null, true);
@@ -455,7 +455,7 @@ namespace TheOtherRoles {
 
             madmateSpawnRate = CustomOption.Create(350, cs(Madmate.color, "狂人"), rates, null, true);
             madmateCanDieToSheriff = CustomOption.Create(351, "狂人がシェリフに殺害されるか", false, madmateSpawnRate);
-            madmateCanEnterVents = CustomOption.Create(352, "通気口を使用出来るか", false, madmateSpawnRate);
+            madmateCanEnterVents = CustomOption.Create(352, "通気孔を使用出来るか", false, madmateSpawnRate);
             madmateHasImpostorVision = CustomOption.Create(353, "インポスターと同じ視界にするか", false, madmateSpawnRate);
             madmateNoticeImpostors = CustomOption.Create(354, "狂人が仕事を完了したらインポスターを知る事が出来るか", false, madmateSpawnRate);
             madmateCommonTasks = CustomOption.Create(355, "共通仕事数", 0f, 0f, 4f, 1f, madmateSpawnRate);
