@@ -18,7 +18,7 @@ namespace TheOtherRoles.Modules {
                             if (AmongUsClient.Instance.AmHost && AmongUsClient.Instance.CanBan()) { // checking both just cause
                                 handled = true;
                                 if (!Int32.TryParse(text.Substring(6), out LobbyLimit)) {
-                                    __instance.AddChat(PlayerControl.LocalPlayer, "レイ人数が無効です\nUsage: /size {amount}");
+                                    __instance.AddChat(PlayerControl.LocalPlayer, "プレイ人数が無効です\nUsage: /size {amount}");
                                 } else {
                                     LobbyLimit = Math.Clamp(LobbyLimit, 4, 15);
                                     if (LobbyLimit != PlayerControl.GameOptions.MaxPlayers) {
@@ -27,7 +27,7 @@ namespace TheOtherRoles.Modules {
                                         PlayerControl.LocalPlayer.RpcSyncSettings(PlayerControl.GameOptions);
                                         __instance.AddChat(PlayerControl.LocalPlayer, $"プレイ人数が{LobbyLimit}人に変更されました");
                                     } else {
-                                        __instance.AddChat(PlayerControl.LocalPlayer, $"プレイ人数{LobbyLimit}の準備が整いました");
+                                        __instance.AddChat(PlayerControl.LocalPlayer, $"プレイ人数が{LobbyLimit}人に変更されました");
                                     }
                                 }
                             }

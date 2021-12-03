@@ -195,6 +195,7 @@ namespace TheOtherRoles {
         public static CustomOption baitSpawnRate;
         public static CustomOption baitHighlightAllVents;
         public static CustomOption baitReportDelay;
+        public static CustomOption baitShowKillFlash;
 
         public static CustomOption vultureSpawnRate;
         public static CustomOption vultureCooldown;
@@ -311,7 +312,7 @@ namespace TheOtherRoles {
             witchSpawnRate = CustomOption.Create(370, cs(Witch.color, "魔女"), rates, null, true);
             witchCooldown = CustomOption.Create(371, "呪文詠唱のクールダウン", 30f, 10f, 120f, 5f, witchSpawnRate);
             witchAdditionalCooldown = CustomOption.Create(372, "魔女追加のクールダウン", 10f, 0f, 60f, 5f, witchSpawnRate);
-            witchCanSpellAnyone = CustomOption.Create(373, "誰でも詠唱出来るか", false, witchSpawnRate);
+            witchCanSpellAnyone = CustomOption.Create(373, "誰にでも詠唱出来るか", false, witchSpawnRate);
             witchSpellCastingDuration = CustomOption.Create(374, "呪文詠唱にかかる時間", 1f, 0f, 10f, 1f, witchSpawnRate);
             witchTriggerBothCooldowns = CustomOption.Create(375, "両方のクールダウンをトリガーするか", true, witchSpawnRate);
             witchVoteSavesTargets = CustomOption.Create(376, "魔女に投票すると全てのターゲットが保存されるか", true, witchSpawnRate);
@@ -447,6 +448,7 @@ namespace TheOtherRoles {
             baitSpawnRate = CustomOption.Create(330, cs(Bait.color, "ベイト(餌)"), rates, null, true);
             baitHighlightAllVents = CustomOption.Create(331, "通気孔使用時にベントを発光させるか", false, baitSpawnRate);
             baitReportDelay = CustomOption.Create(332, "餌自身の殺害後の報告までの時間", 0f, 0f, 10f, 1f, baitSpawnRate);
+            baitShowKillFlash = CustomOption.Create(333, "殺人鬼にフラッシュで警告するか", true, baitSpawnRate);
 
             mediumSpawnRate = CustomOption.Create(360, cs(Medium.color, "霊媒師"), rates, null, true);
             mediumCooldown = CustomOption.Create(361, "質問クールダウン", 30f, 5f, 120f, 5f, mediumSpawnRate);

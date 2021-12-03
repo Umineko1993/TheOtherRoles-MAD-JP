@@ -104,7 +104,7 @@ namespace TheOtherRoles.Patches {
                             SceneChanger.ChangeScene("MainMenu");
                         }
 
-                        __instance.GameStartText.text = $"<color=#FF0000FF>部屋主とThe Other Roles MAD JPのバージョンが違います\nあなたは{Math.Round(10 - kickingTimer)}秒後にゲームから追い出されます</color>";
+                        __instance.GameStartText.text = $"<color=#FF0000FF>部屋主とThe Other Roles MAD JPのバージョンが違います\nあなたは {Math.Round(10 - kickingTimer)} 秒後にゲームから追い出されます</color>";
                         __instance.GameStartText.transform.localPosition = __instance.StartButton.transform.localPosition + Vector3.up * 2;
                     } else {
                         __instance.GameStartText.transform.localPosition = __instance.StartButton.transform.localPosition;

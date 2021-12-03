@@ -124,7 +124,7 @@ namespace TheOtherRoles {
 
                 if (roleInfo.name == "Jackal") {
                     var getSidekickText = Jackal.canCreateSidekick ? "全員をを殺害してサイドキックを指名しよう" : "";
-                    task.Text = cs(roleInfo.color, $"{roleInfo.name}: 全員を殺害する {getSidekickText}");  
+                    task.Text = cs(roleInfo.color, $"{roleInfo.name}: 全員を殺害する{getSidekickText}");  
                 } else {
                     task.Text = cs(roleInfo.color, $"{roleInfo.name}: {roleInfo.shortDescription}");  
                 }

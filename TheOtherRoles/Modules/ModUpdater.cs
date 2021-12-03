@@ -105,7 +105,6 @@ namespace TheOtherRoles.Modules {
                 http.DefaultRequestHeaders.Add("User-Agent", "TheOtherRoles Updater");
                 var response = await http.GetAsync(new System.Uri("https://api.github.com/repos/Umineko1993/TheOtherRoles-MAD-JP/releases/latest"), HttpCompletionOption.ResponseContentRead);
                 // var response = await http.GetAsync(new System.Uri("https://api.github.com/repos/Eisbison/TheOtherRoles/releases/latest"), HttpCompletionOption.ResponseContentRead);
-                // var response = await http.GetAsync(new System.Uri("https://api.github.com/repos/EoF-1141/TheOtherRoles/releases/latest"), HttpCompletionOption.ResponseContentRead);
                 if (response.StatusCode != HttpStatusCode.OK || response.Content == null) {
                     System.Console.WriteLine("サーバーはデータを返しませんでした: " + response.StatusCode.ToString());
                     return false;

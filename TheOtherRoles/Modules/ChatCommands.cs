@@ -54,7 +54,7 @@ namespace TheOtherRoles.Modules {
                         }
                         col = Math.Clamp(col, 0, Palette.PlayerColors.Length - 1);
                         PlayerControl.LocalPlayer.SetColor(col);
-                        __instance.AddChat(PlayerControl.LocalPlayer, "色を正常に変更出来ました"); ;
+                        __instance.AddChat(PlayerControl.LocalPlayer, "色を正常に変更出来ました");;
                     } 
                 }
 

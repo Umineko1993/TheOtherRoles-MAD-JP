@@ -98,7 +98,7 @@ namespace TheOtherRoles.Objects {
                 }
                 catch (NullReferenceException)
                 {
-                    System.Console.WriteLine("[Œx] NullReferenceException from MeetingEndedUpdate().HasButton(), Œx‚ª1‚Â‚µ‚©‚È‚¢ê‡‚Í–â‘è‚ ‚è‚Ü‚¹‚ñ");
+                    System.Console.WriteLine("[[Œx] NullReferenceException from MeetingEndedUpdate().HasButton(), Œx‚ª1‚Â‚µ‚©‚È‚¢ê‡‚Í–â‘è‚ ‚è‚Ü‚¹‚ñ");
                 }
             }
         }

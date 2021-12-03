@@ -258,7 +258,7 @@ namespace TheOtherRoles.Modules {
 
         [HarmonyPatch(typeof(HatsTab), nameof(HatsTab.OnEnable))]
         public class HatsTabOnEnablePatch {
-            public static string innerslothPackageName = "nnerslothŒö®ì";
+            public static string innerslothPackageName = "InnerslothŒö®ì";
             private static TMPro.TMP_Text textTemplate;
 
             public static float createHatPackage(List<System.Tuple<HatBehaviour, HatExtension>> hats, string packageName, float YStart, HatsTab __instance) {

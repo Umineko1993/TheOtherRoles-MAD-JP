@@ -478,7 +478,7 @@ namespace TheOtherRoles
                             HudManager.Instance.StartCoroutine(Effects.Lerp(Vampire.delay, new Action<float>((p) => { // Delayed action
                                 if (p == 1f) {
                                     // Perform kill if possible and reset bitten (regardless whether the kill was successful or not)
-                                    Helpers.checkMuderAttemptAndKill(Vampire.vampire, Vampire.bitten);
+                                    Helpers.checkMuderAttemptAndKill(Vampire.vampire, Vampire.bitten, showAnimation: false);
                                     MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.VampireSetBitten, Hazel.SendOption.Reliable, -1);
                                     writer.Write(byte.MaxValue);
                                     writer.Write(byte.MaxValue);
@@ -729,19 +729,10 @@ namespace TheOtherRoles
                         warlockCurseButton.Sprite = Warlock.getCurseKillButtonSprite();
                         warlockCurseButton.Timer = 1f;
                     } else if (Warlock.curseVictim != null && Warlock.curseVictimTarget != null) {
-                        MurderAttemptResult murder = Helpers.checkMuderAttempt(Warlock.warlock, Warlock.curseVictimTarget);
+                        MurderAttemptResult murder = Helpers.checkMuderAttemptAndKill(Warlock.warlock, Warlock.curseVictimTarget, showAnimation: false);
                         if (murder == MurderAttemptResult.SuppressKill) return; 
 
-                        // Curse Kill
-                        if (murder == MurderAttemptResult.PerformKill) {
-                            MessageWriter killWriter = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.UncheckedMurderPlayer, Hazel.SendOption.Reliable, -1);
-                            killWriter.Write(Warlock.warlock.Data.PlayerId);
-                            killWriter.Write(Warlock.curseVictimTarget.PlayerId);
-                            killWriter.Write((byte)0);
-                            AmongUsClient.Instance.FinishRpcImmediately(killWriter);
-                            RPCProcedure.uncheckedMurderPlayer(Warlock.warlock.Data.PlayerId, Warlock.curseVictimTarget.PlayerId, (byte)0);
-                        }  
-
+                        // If blanked or killed
                         if(Warlock.rootTime > 0) {
                             PlayerControl.LocalPlayer.moveable = false;
                             PlayerControl.LocalPlayer.NetTransform.Halt(); // Stop current movement so the warlock is not just running straight into the next object
@@ -943,7 +934,7 @@ namespace TheOtherRoles
                     string msg = "";
 
                     int randomNumber = Medium.target.killerIfExisting?.PlayerId == Mini.mini?.PlayerId ? TheOtherRoles.rnd.Next(3) : TheOtherRoles.rnd.Next(4);
-                    string typeOfColor = Helpers.isLighterColor(Medium.target.killerIfExisting.Data.DefaultOutfit.ColorId) ? "’WF" : "”ZF";
+                    string typeOfColor = Helpers.isLighterColor(Medium.target.killerIfExisting.Data.DefaultOutfit.ColorId) ? "lighter" : "darker";
                     float timeSinceDeath = ((float)(Medium.meetingStartTime - Medium.target.timeOfDeath).TotalMilliseconds);
                     string name = " (" + Medium.target.player.Data.PlayerName + ")";
 
@@ -952,6 +943,8 @@ namespace TheOtherRoles
                     else if (randomNumber == 1) msg = "‚ ‚È‚½‚ğEŠQ‚µ‚½”Æl‚ÌF‚Í‰½‚Å‚·‚© ? „‚ğEŠQ‚µ‚½”Æl‚ÌF‚Í " + typeOfColor + "‚Å‚·" + name;
                     else if (randomNumber == 2) msg = "‚ ‚È‚½‚Í‚¢‚Â€–S‚µ‚Ü‚µ‚½‚©? „‚Í " + Math.Round(timeSinceDeath / 1000) + "‰ñ–Ú‚Ì‰ï‹cŠJn‘O‚É€–S‚µ‚Ü‚µ‚½" + name;
                     else msg = "‚ ‚È‚½‚ğEŠQ‚µ‚½”Æl‚Ì–ğE‚Í‰½‚Å‚·‚©? „‚ğEŠQ‚µ‚½”Æl‚Ì–ğE‚Í " + RoleInfo.GetRolesString(Medium.target.killerIfExisting, false) + "‚Å‚·" + name; //exlude mini
+
+                    DestroyableSingleton<HudManager>.Instance.Chat.AddChat(PlayerControl.LocalPlayer, $"{msg}");
 
                     // Remove soul
                     if (Medium.oneTimeUse) {

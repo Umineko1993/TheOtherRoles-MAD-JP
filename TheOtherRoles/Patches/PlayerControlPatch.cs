@@ -814,15 +814,23 @@ namespace TheOtherRoles.Patches {
                     float timeSinceDeath = ((float)(DateTime.UtcNow - deadPlayer.timeOfDeath).TotalMilliseconds);
                     string msg = "";
 
-                    if (isMedicReport) {
+                    if (isMedicReport)
+                    {
                         msg = $"éÄëÃïÒçê: âΩ {Math.Round(timeSinceDeath / 1000)} ïbëOÇ…éEÇ≥ÇÍÇ‹ÇµÇΩ";
-                    } else if (isDetectiveReport) {
-                        if (timeSinceDeath < Detective.reportNameDuration * 1000) {
-                            msg =  $"éÄëÃïÒçê: éEäQé“ÇÕ {deadPlayer.killerIfExisting.Data.PlayerName} Ç≈Ç∑";
-                        } else if (timeSinceDeath < Detective.reportColorDuration * 1000) {
+                    }
+                    else if (isDetectiveReport)
+                    {
+                        if (timeSinceDeath < Detective.reportNameDuration * 1000)
+                        {
+                            msg = $"éÄëÃïÒçê: éEäQé“ÇÕ {deadPlayer.killerIfExisting.Data.PlayerName} Ç≈Ç∑";
+                        }
+                        else if (timeSinceDeath < Detective.reportColorDuration * 1000)
+                        {
                             var typeOfColor = Helpers.isLighterColor(deadPlayer.killerIfExisting.Data.DefaultOutfit.ColorId) ? "íWêF" : "îZêF";
-                            msg =  $"éÄëÃïÒçê: éEäQé“ÇÕ {typeOfColor}êFÇ≈Ç∑";
-                        } else {
+                            msg = $"éÄëÃïÒçê: éEäQé“ÇÕ {typeOfColor}êFÇ≈Ç∑";
+                        }
+                        else
+                        {
                             msg = $"éÄëÃïÒçê: éÄëÃÇÕå√Ç∑Ç¨ÇƒèÓïÒÇìæÇÈéñÇ™èoóàÇ‹ÇπÇÒ";
                         }
                     }
@@ -949,6 +957,23 @@ namespace TheOtherRoles.Patches {
                 }
                 else
                     BountyHunter.bountyHunter.SetKillTimer(PlayerControl.GameOptions.KillCooldown + BountyHunter.punishmentTime); 
+            }
+
+            // Show flash on bait kill to the killer if enabled
+            if (Bait.bait != null && target == Bait.bait && Bait.showKillFlash && __instance == PlayerControl.LocalPlayer) {
+                HudManager.Instance.FullScreen.enabled = true;
+                HudManager.Instance.StartCoroutine(Effects.Lerp(1f, new Action<float>((p) => {
+                    var renderer = HudManager.Instance.FullScreen;
+                    if (p < 0.5) {
+                        if (renderer != null)
+                            renderer.color = new Color(204f / 255f, 102f / 255f, 0f / 255f, Mathf.Clamp01(p * 2 * 0.75f));
+                    }
+                    else {
+                        if (renderer != null)
+                            renderer.color = new Color(204f / 255f, 102f / 255f, 0f / 255f, Mathf.Clamp01((1 - p) * 2 * 0.75f));
+                    }
+                    if (p == 1f && renderer != null) renderer.enabled = false;
+                })));
             }
         }
     }
