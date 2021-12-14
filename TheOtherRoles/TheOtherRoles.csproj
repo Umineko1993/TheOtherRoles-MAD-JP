@@ -1,29 +1,41 @@
-<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-        <Version>3.2.4.1</Version>
-        <Description>TheOtherRoles MAD JP</Description>
-        <Authors>Saso Utano</Authors>
-    </PropertyGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+		<PropertyGroup>
+				<TargetFramework>netstandard2.1</TargetFramework>
+				<Version>3.2.4.3</Version>
+				<Description>TheOtherRoles MAD JP</Description>
+				<Authors>Saso Utano</Authors>
+		</PropertyGroup>
 
-    <PropertyGroup>
-        <DefineConstants>$(DefineConstants);STEAM</DefineConstants>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    </PropertyGroup>
+		<PropertyGroup>
+				<DefineConstants>$(DefineConstants);STEAM</DefineConstants>
+				<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+				<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+				<AnalysisLevel>preview</AnalysisLevel>
+		</PropertyGroup>
 
-    <ItemGroup>
-        <EmbeddedResource Include="Resources\CustomHats\*.png" />
-        <EmbeddedResource Include="Resources\*.png" />
-        <EmbeddedResource Include="Resources\TricksterAnimation\*.png" />
-    </ItemGroup>
+		<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+			<WarningLevel>4</WarningLevel>
+			<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+		</PropertyGroup>
 
-    <ItemGroup>
-        <Reference Include="$(AmongUs)/BepInEx/core/*.dll" />
-        <Reference Include="$(AmongUs)/BepInEx/unhollowed/*.dll" />
-    </ItemGroup>
+		<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+			<WarningLevel>4</WarningLevel>
+			<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+		</PropertyGroup>
 
-    <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
-        <Message Text="Second occurrence" />
-        <Copy SourceFiles="$(ProjectDir)\bin\$(Configuration)\netstandard2.1\TheOtherRoles.dll" DestinationFolder="$(AmongUsLatest)/BepInEx/plugins/" />
-    </Target>
+		<ItemGroup>
+				<EmbeddedResource Include="Resources\CustomHats\*.png" />
+				<EmbeddedResource Include="Resources\*.png" />
+				<EmbeddedResource Include="Resources\TricksterAnimation\*.png" />
+		</ItemGroup>
+
+		<ItemGroup>
+				<Reference Include="$(AmongUs)/BepInEx/core/*.dll" />
+				<Reference Include="$(AmongUs)/BepInEx/unhollowed/*.dll" />
+		</ItemGroup>
+
+		<Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+				<Message Text="Second occurrence" />
+				<Copy SourceFiles="$(ProjectDir)\bin\$(Configuration)\netstandard2.1\TheOtherRoles.dll" DestinationFolder="$(AmongUsLatest)/BepInEx/plugins/" />
+		</Target>
 </Project>

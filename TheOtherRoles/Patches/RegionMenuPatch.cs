@@ -30,86 +30,86 @@ using System;
 using UnityEngine.Events;
 
 namespace TheOtherRoles.Patches {
-    [HarmonyPatch(typeof(RegionMenu), nameof(RegionMenu.Open))]
-    public static class RegionMenuOpenPatch
-    {
-        private static TextBoxTMP ipField;
-        private static TextBoxTMP portField;
+	[HarmonyPatch(typeof(RegionMenu), nameof(RegionMenu.Open))]
+	public static class RegionMenuOpenPatch
+	{
+		private static TextBoxTMP ipField;
+		private static TextBoxTMP portField;
 
-        public static void Postfix(RegionMenu __instance) {
-            var template = DestroyableSingleton<JoinGameButton>.Instance;
-            if (template == null || template.GameIdText == null) return;
+		public static void Postfix(RegionMenu __instance) {
+			var template = DestroyableSingleton<JoinGameButton>.Instance;
+			if (template == null || template.GameIdText == null) return;
 
-            if (ipField == null || ipField.gameObject == null) {
-                ipField = UnityEngine.Object.Instantiate(template.GameIdText, __instance.transform);
-                ipField.gameObject.name = "IpTextBox";
-                var arrow = ipField.transform.FindChild("arrowEnter");
-                if (arrow == null || arrow.gameObject == null) return;
-                UnityEngine.Object.DestroyImmediate(arrow.gameObject);
+			if (ipField == null || ipField.gameObject == null) {
+				ipField = UnityEngine.Object.Instantiate(template.GameIdText, __instance.transform);
+				ipField.gameObject.name = "IpTextBox";
+				var arrow = ipField.transform.FindChild("arrowEnter");
+				if (arrow == null || arrow.gameObject == null) return;
+				UnityEngine.Object.DestroyImmediate(arrow.gameObject);
 
-                ipField.transform.localPosition = new Vector3(0, -1f, -100f);
-                ipField.characterLimit = 30;
-                ipField.AllowSymbols = true;
-                ipField.ForceUppercase = false;
-                ipField.SetText(TheOtherRolesPlugin.Ip.Value);
-                __instance.StartCoroutine(Effects.Lerp(0.1f, new Action<float>((p) => {
-                    ipField.outputText.SetText(TheOtherRolesPlugin.Ip.Value);
-                    ipField.SetText(TheOtherRolesPlugin.Ip.Value);
-                })));
+				ipField.transform.localPosition = new Vector3(0, -1f, -100f);
+				ipField.characterLimit = 30;
+				ipField.AllowSymbols = true;
+				ipField.ForceUppercase = false;
+				ipField.SetText(TheOtherRolesPlugin.Ip.Value);
+				__instance.StartCoroutine(Effects.Lerp(0.1f, new Action<float>((p) => {
+					ipField.outputText.SetText(TheOtherRolesPlugin.Ip.Value);
+					ipField.SetText(TheOtherRolesPlugin.Ip.Value);
+				})));
 
-                ipField.ClearOnFocus = false; 
-                ipField.OnEnter = ipField.OnChange = new Button.ButtonClickedEvent();
-                ipField.OnFocusLost = new Button.ButtonClickedEvent();
-                ipField.OnChange.AddListener((UnityAction)onEnterOrIpChange);
-                ipField.OnFocusLost.AddListener((UnityAction)onFocusLost);
+				ipField.ClearOnFocus = false; 
+				ipField.OnEnter = ipField.OnChange = new Button.ButtonClickedEvent();
+				ipField.OnFocusLost = new Button.ButtonClickedEvent();
+				ipField.OnChange.AddListener((UnityAction)onEnterOrIpChange);
+				ipField.OnFocusLost.AddListener((UnityAction)onFocusLost);
 
-                void onEnterOrIpChange() {
-                    TheOtherRolesPlugin.Ip.Value = ipField.text;
-                }
+				void onEnterOrIpChange() {
+					TheOtherRolesPlugin.Ip.Value = ipField.text;
+				}
 
-                void onFocusLost() {
-                    TheOtherRolesPlugin.UpdateRegions();
-                    __instance.ChooseOption(ServerManager.DefaultRegions[ServerManager.DefaultRegions.Length - 1]);
-                }
-            }
+				void onFocusLost() {
+					TheOtherRolesPlugin.UpdateRegions();
+					__instance.ChooseOption(ServerManager.DefaultRegions[ServerManager.DefaultRegions.Length - 1]);
+				}
+			}
 
-            if (portField == null || portField.gameObject == null) {
-                portField = UnityEngine.Object.Instantiate(template.GameIdText, __instance.transform);
-                portField.gameObject.name = "PortTextBox";
-                var arrow = portField.transform.FindChild("arrowEnter");
-                if (arrow == null || arrow.gameObject == null) return;
-                UnityEngine.Object.DestroyImmediate(arrow.gameObject);
+			if (portField == null || portField.gameObject == null) {
+				portField = UnityEngine.Object.Instantiate(template.GameIdText, __instance.transform);
+				portField.gameObject.name = "PortTextBox";
+				var arrow = portField.transform.FindChild("arrowEnter");
+				if (arrow == null || arrow.gameObject == null) return;
+				UnityEngine.Object.DestroyImmediate(arrow.gameObject);
 
-                portField.transform.localPosition = new Vector3(0, -1.75f, -100f);
-                portField.characterLimit = 5;
-                portField.SetText(TheOtherRolesPlugin.Port.Value.ToString());
-                __instance.StartCoroutine(Effects.Lerp(0.1f, new Action<float>((p) => {
-                    portField.outputText.SetText(TheOtherRolesPlugin.Port.Value.ToString());
-                    portField.SetText(TheOtherRolesPlugin.Port.Value.ToString()); 
-                })));
+				portField.transform.localPosition = new Vector3(0, -1.75f, -100f);
+				portField.characterLimit = 5;
+				portField.SetText(TheOtherRolesPlugin.Port.Value.ToString());
+				__instance.StartCoroutine(Effects.Lerp(0.1f, new Action<float>((p) => {
+					portField.outputText.SetText(TheOtherRolesPlugin.Port.Value.ToString());
+					portField.SetText(TheOtherRolesPlugin.Port.Value.ToString()); 
+				})));
 
 
-                portField.ClearOnFocus = false;
-                portField.OnEnter = portField.OnChange = new Button.ButtonClickedEvent();
-                portField.OnFocusLost = new Button.ButtonClickedEvent();
-                portField.OnChange.AddListener((UnityAction)onEnterOrPortFieldChange);
-                portField.OnFocusLost.AddListener((UnityAction)onFocusLost);
+				portField.ClearOnFocus = false;
+				portField.OnEnter = portField.OnChange = new Button.ButtonClickedEvent();
+				portField.OnFocusLost = new Button.ButtonClickedEvent();
+				portField.OnChange.AddListener((UnityAction)onEnterOrPortFieldChange);
+				portField.OnFocusLost.AddListener((UnityAction)onFocusLost);
 
-                void onEnterOrPortFieldChange() {
-                    ushort port = 0;
-                    if (ushort.TryParse(portField.text, out port)) {
-                        TheOtherRolesPlugin.Port.Value = port;
-                        portField.outputText.color = Color.white;
-                    } else {
-                        portField.outputText.color = Color.red;
-                    }
-                }
-                
-                void onFocusLost() {
-                    TheOtherRolesPlugin.UpdateRegions();
-                    __instance.ChooseOption(ServerManager.DefaultRegions[ServerManager.DefaultRegions.Length - 1]);
-                }
-            }
-        }
-    }
+				void onEnterOrPortFieldChange() {
+					ushort port = 0;
+					if (ushort.TryParse(portField.text, out port)) {
+						TheOtherRolesPlugin.Port.Value = port;
+						portField.outputText.color = Color.white;
+					} else {
+						portField.outputText.color = Color.red;
+					}
+				}
+				
+				void onFocusLost() {
+					TheOtherRolesPlugin.UpdateRegions();
+					__instance.ChooseOption(ServerManager.DefaultRegions[ServerManager.DefaultRegions.Length - 1]);
+				}
+			}
+		}
+	}
 }
